@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20140521172754) do
   end
 
   create_table "category_joins", force: true do |t|
+    t.integer  "item_id",     null: false
+    t.integer  "category_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

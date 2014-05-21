@@ -6,10 +6,10 @@ class ItemsController < ApplicationController
     @item = current_user.items.new(item_params)
     
     if @item.save
-      category = CategoryJoin.new(
+      category = CategoryJoin.new({
         item_id: @item.id, 
         category_id: params[:item][:category_id]
-      )
+      })
       
       if category.save
         redirect_to item_url(@item)
