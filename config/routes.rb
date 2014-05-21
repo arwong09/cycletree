@@ -1,8 +1,8 @@
 Cycletree::Application.routes.draw do
   root to: 'sessions#new'
   
-  resources :users, only: [:new, :create] do
-    resources :items, only: [:new, :create]
+  resources :users, only: [:new, :create, :show] do
+    resources :items, only: [:new, :create, :show]
   end
   
   resource :session, only: [:new, :create, :destroy]
