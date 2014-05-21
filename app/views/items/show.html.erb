@@ -1,2 +1,2 @@
 <h1><%= @item.title %></h1>
-<%= image_tag @item.image.url %>
+<%= image_tag @item.image.url if @item.image_file_name %>

@@ -13,7 +13,9 @@
   
   <%= f.label :features %>
   <%= f.text_field :features %>
-  <!-- <input type='file' name='item[image]'> -->
+  
+  <%= select("item", "categories", Category.all.collect { |c| [ c.title, c.id ] }, {include_blank: 'None'}) %>
+  
   <%= f.file_field :image %>
   
   <%= f.submit "post bike" %>
