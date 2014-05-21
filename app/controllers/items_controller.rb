@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   def new
+    @item = Item.new
+    @user = current_user
   end
   
   def create
@@ -11,9 +13,9 @@ class ItemsController < ApplicationController
         category_id: params[:item][:category_id]
       })
       
-      if category.save
+      #if category.save
         redirect_to item_url(@item)
-      end
+        #end
     else
       flash.now[:errors] = @item.errors.full_messages
       render :new
@@ -21,11 +23,12 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
   
   private
   
   def item_params
-    params.require(:item).permit(:title, :description, :price, :condition, :features)
+    params.require(:item).permit(:title, :description, :price, :condition, :features, :image)
   end
 end

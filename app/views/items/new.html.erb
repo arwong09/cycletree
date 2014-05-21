@@ -1,51 +1,21 @@
-<div class="col-xs-2">
-  <div class="panel panel-default panel-body">
-    <form action="<%= user_items_url(current_user) %>" method="post">
-      <input type="hidden" name="authenticity_token" 
-        value="<%= form_authenticity_token %>">
+<%= form_for [current_user, @item], url: user_items_url(current_user), method: :post, html: { multipart: true } do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
   
-      <div class='form-group'>
-        <label for="title">Title</label>
-        <input class='form-control' type="text" name="item[title]" 
-          value="" id="title">
-      </div>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
   
-      <div class='form-group'>
-        <label for="description">Description</label>
-        <input class='form-control' type="text" name="item[description]" 
-          value="" id="description">
-      </div>
-      
-      <div class='form-group'>
-        <label for="category">Category</label>
-        <select class="form-control" name='item[category_id]'>
-          <option value="1">Fixed Gear</option>
-          <option value="2">Road Bike</option>
-        </select>
-      </div>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
   
-      <div class='form-group'>
-        <label for="price">Price</label>
-        <input class='form-control' type="text" name="item[price]" 
-          value="" id="price">
-      </div>
+  <%= f.label :condition %>
+  <%= f.text_field :condition %>
   
-      <div class='form-group'>
-        <label for="condition">Condition</label>
-        <input class='form-control' type="text" name="item[condition]" 
-          value="" id="condition">
-      </div>
+  <%= f.label :features %>
+  <%= f.text_field :features %>
+  <!-- <input type='file' name='item[image]'> -->
+  <%= f.file_field :image %>
   
-      <div class='form-group'>
-        <label for="features">Features</label>
-        <input class='form-control' type="text" name="item[features]" 
-          value="" id="features">  
-      </div>
-  
-      <div class='form-group'>
-        <input class='btn btn-primary' type="submit" value="post bike">
-      </div>
-  
-    </form>
-  </div>
-</div>
+  <%= f.submit "post bike" %>
+<% end %>
+

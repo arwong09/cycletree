@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521172754) do
+ActiveRecord::Schema.define(version: 20140521175958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +30,18 @@ ActiveRecord::Schema.define(version: 20140521172754) do
   end
 
   create_table "items", force: true do |t|
-    t.string   "title",       null: false
-    t.text     "description", null: false
-    t.integer  "price",       null: false
-    t.string   "condition",   null: false
+    t.string   "title",              null: false
+    t.text     "description",        null: false
+    t.integer  "price",              null: false
+    t.string   "condition",          null: false
     t.string   "features"
-    t.integer  "owner_id",    null: false
+    t.integer  "owner_id",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "items", ["condition"], name: "index_items_on_condition", using: :btree
