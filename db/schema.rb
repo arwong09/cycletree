@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140521080914) do
     t.string   "condition",   null: false
     t.string   "features"
     t.integer  "owner_id",    null: false
+    t.integer  "category_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
