@@ -1,11 +1,11 @@
 Cycletree::Application.routes.draw do
   root to: 'sessions#new'
   
-  resources :users do
+  resources :users, only: [:new, :create] do
     resources :items, only: [:new, :create]
   end
   
-  resource :session
+  resource :session, only: [:new, :create, :destroy]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
