@@ -5,6 +5,7 @@ window.Cycletree = {
   Routers: {},
   initialize: function() {
     Cycletree.Categories = new Cycletree.Categories();
+    debugger
     
     Cycletree.Categories.fetch({
       success: function() {
