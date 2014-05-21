@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   
   before_validation :ensure_session_token
   
+  has_many :items, class_name: :Item, foreign_key: :owner_id
+  
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user.try(:is_password?, password) ? user : nil
