@@ -7,7 +7,6 @@ class CreateItems < ActiveRecord::Migration
       t.string :condition, null: false
       t.string :features
       t.integer :owner_id, null: false
-      t.integer :category_id, null: false
       t.timestamps
     end
     
