@@ -7,13 +7,15 @@ class CreateUsers < ActiveRecord::Migration
                 
       t.string :email
       t.string :full_name
-      t.string :profile
+      t.text :profile
       t.string :description
       t.string :title
       t.string :blurb
       t.timestamps
     end
     
-    add_index :users, [:username, :email, :full_name], unique: true
+    add_index :users, :username, unique: true
+    add_index :users, :email, unique: true
+    add_index :users, :full_name, unique: true
   end
 end
