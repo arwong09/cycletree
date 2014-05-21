@@ -4,8 +4,6 @@ Cycletree.Router = Backbone.Router.extend({
   },
   
   categoriesIndex: function () {
-    Cycletree.Categories.fetch();
-    
     var indexView = new Cycletree.CategoriesIndex({
       collection: Cycletree.Categories
     });

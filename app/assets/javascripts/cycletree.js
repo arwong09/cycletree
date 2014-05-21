@@ -5,8 +5,16 @@ window.Cycletree = {
   Routers: {},
   initialize: function() {
     Cycletree.Categories = new Cycletree.Categories();
-    Cycletree.Router = new Cycletree.Router();
-    Backbone.history.start();
+    
+    Cycletree.Categories.fetch({
+      success: function() {
+        new Cycletree.Router();
+        Backbone.history.start();
+      },
+      error: function() {
+        console.log('Failed to fetch.');
+      }
+    });  
   }
 };
 
