@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
   
   def signed_in?
-    !!curent_user
+    !!current_user
   end
   
   def login!(user)
@@ -31,6 +31,6 @@ class ApplicationController < ActionController::Base
   end
   
   def require_signed_out!
-    redirect_to user_url(current_user) if singed_in?
+    redirect_to user_url(current_user) if signed_in?
   end
 end

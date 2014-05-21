@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20140521071302) do
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "session_token"
-    t.string   "email",           null: false
+    t.string   "email"
+    t.string   "full_name"
     t.string   "profile"
     t.string   "description"
     t.string   "title"
@@ -28,5 +29,7 @@ ActiveRecord::Schema.define(version: 20140521071302) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["username", "email", "full_name"], name: "index_users_on_username_and_email_and_full_name", unique: true, using: :btree
 
 end
