@@ -1,0 +1,1 @@
+Cycletree.Category = Backbone.Model.extend({});
