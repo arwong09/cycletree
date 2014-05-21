@@ -1,4 +1,6 @@
 Cycletree::Application.routes.draw do
+  get "items/new"
+  get "items/show"
   root to: 'sessions#new'
   
   resources :users, only: [:new, :create, :show] do

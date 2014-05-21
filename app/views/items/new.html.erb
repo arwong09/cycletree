@@ -1,0 +1,41 @@
+<div class="col-xs-2">
+  <div class="panel panel-default panel-body">
+    <form action="<%= new_user_item_url(current_user) %>" method="post">
+  
+      <div class='form-group'>
+        <label for="title">Title</label>
+        <input class='form-control' type="text" name="item[title]" 
+          value="" id="title">
+      </div>
+  
+      <div class='form-group'>
+        <label for="description">Description</label>
+        <input class='form-control' type="text" name="item[description]" 
+          value="" id="description">
+      </div>
+  
+      <div class='form-group'>
+        <label for="price">Price</label>
+        <input class='form-control' type="text" name="item[price]" 
+          value="" id="price">
+      </div>
+  
+      <div class='form-group'>
+        <label for="condition">Condition</label>
+        <input class='form-control' type="text" name="item[condition]" 
+          value="" id="condition">
+      </div>
+  
+      <div class='form-group'>
+        <label for="features">Features</label>
+        <input class='form-control' type="text" name="item[features]" 
+          value="" id="features">  
+      </div>
+  
+      <div class='form-group'>
+        <input class='btn btn-primary' type="submit" value="post bike">
+      </div>
+  
+    </form>
+  </div>
+</div>
