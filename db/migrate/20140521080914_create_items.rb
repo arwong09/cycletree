@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :price, null: false
       t.string :condition, null: false
       t.string :features
+      t.integer :owner_id, null: false
       t.timestamps
     end
     
