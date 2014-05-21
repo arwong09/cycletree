@@ -6,7 +6,14 @@ class ItemsController < ApplicationController
     @item = current_user.items.new(item_params)
     
     if @item.save
-      redirect_to item_url(@item)
+      category = CategoryJoin.new(
+        item_id: @item.id, 
+        category_id: params[:item][:category_id]
+      )
+      
+      if category.save
+        redirect_to item_url(@item)
+      end
     else
       flash.now[:errors] = @item.errors.full_messages
       render :new
