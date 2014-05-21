@@ -4,6 +4,7 @@ window.Cycletree = {
   Views: {},
   Routers: {},
   initialize: function() {
+    alert('hello from bb');
     Cycletree.Categories = new Cycletree.Categories();
     debugger
     
