@@ -1,3 +1,4 @@
 <% items.each(function(item){ %>
-  <%= item.title %>
+  <%= item.get('title') %>
+  <img src='<%= item.get('image_url') %>' />
 <% }) %>

@@ -9,9 +9,8 @@ Cycletree.Router = Backbone.Router.extend({
     
     theseItems.fetch({
       success: function() {
-        debugger
         this._swapView(showView)
-      }
+      }.bind(this)
     })
   },
   
