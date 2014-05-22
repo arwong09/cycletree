@@ -5,19 +5,12 @@ window.Cycletree = {
   Routers: {},
   initialize: function() {
     Cycletree.Categories = new Cycletree.Categories();
-    
-    Cycletree.Categories.fetch({
-      success: function() {
-        new Cycletree.Router();
-        Backbone.history.start();
-      },
-      error: function() {
-        console.log('Failed to fetch.');
-      }
-    });  
+    new Cycletree.Router();
+    Backbone.history.start();
+    console.log("backbone is running!");
   }
 };
 
 $(document).ready(function(){
-  // Cycletree.initialize();
+  Cycletree.initialize();
 });
