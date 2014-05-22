@@ -4,9 +4,7 @@ window.Cycletree = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('hello from bb');
     Cycletree.Categories = new Cycletree.Categories();
-    debugger
     
     Cycletree.Categories.fetch({
       success: function() {
@@ -21,5 +19,5 @@ window.Cycletree = {
 };
 
 $(document).ready(function(){
-  Cycletree.initialize();
+  // Cycletree.initialize();
 });

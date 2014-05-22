@@ -1,0 +1,35 @@
+<div class="side-margin clear-fix">
+  <div class="left-col">
+    <ul class="clear-fix">
+      <div class="poster poster-large clear-fix">
+        <li><%= image_tag @categories.find(1).image.url %></li>
+      </div>
+      
+      <div class="poster poster-small-left clear-fix">
+        <li><%= image_tag @categories.find(6).image.url %></li>
+      </div>
+      
+      <div class="poster poster-small clear-fix">
+        <li><%= image_tag @categories.find(2).image.url %></li>
+      </div>
+    </ul>
+  </div>
+
+  <div class='right-col'>
+    <ul class="clear-fix">
+      <div class="poster poster-small poster-right clear-fix">
+        <li><%= image_tag @categories.find(4).image.url %></li>
+      </div>
+      
+      <div class="poster poster-small poster-right-small clear-fix">
+        <li><%= image_tag @categories.find(5).image.url %></li>
+      </div>
+    
+      <div class="poster poster-large poster-right clear-fix">
+        <li><%= image_tag @categories.find(3).image.url %></li>
+      </div>
+    
+     
+    </ul>
+  </div>
+</div>

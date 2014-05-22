@@ -1,3 +1,72 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+.clear-fix {
+  overflow: hidden;
+  display: inline-block;
+  display: block;
+}
+
+.poster {
+  padding: 4px;
+  background-color: white;
+  border-radius: 3px;
+  float: left;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+img {
+  display: block;
+  opacity: 0.8;
+}
+
+.poster-large {
+  margin-bottom: 10px;
+  width: 473px;
+}
+
+.poster-large img {
+  width: 473px;
+}
+
+.poster-small-left {
+  margin-right: 10px;
+}
+
+.poster-right {
+  float: right;
+}
+
+.poster-right-small {
+  margin-bottom: 10px;
+}
+
+.poster-small img {
+  width: 230px;
+}
+
+.side-margin {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.left-col {
+  float: left;
+  width: 50%;
+}
+
+.right-col {
+  float: left;
+  width: 50%;
+}
