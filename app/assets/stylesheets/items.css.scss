@@ -7,6 +7,34 @@
 }
 
 #form-item-title {
-  width: 50%;
+  width: 55%;
 }
 
+#form-item-price {
+  width: 15%;
+}
+
+#form-item-email {
+  max-width: 28%;
+}
+
+#form-item-description {
+  width: 99%;
+}
+
+#form-item-description textarea {
+  width: 100%;
+}
+
+.photo-square {
+  width: 100%;
+  margin: 0 auto 15px auto;
+  border-radius: 3px;
+  border: 2px solid #eee;
+}
+
+.photo-square:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}

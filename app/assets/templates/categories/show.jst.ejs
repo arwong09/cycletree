@@ -1,8 +1,10 @@
 <div class="col-xs-8 col-xs-offset-2">
   <% items.each(function(item){ %>
     <div class='poster poster-show'>
-      <%= item.get('title') %>
-      <img src='<%= item.get('small_url') %>' />
+      <a href="/items/<%= item.get('id') %>">
+        <%= item.get('title') %>
+        <img src='<%= item.get('thumb_url') %>' />
+      </a>
     </div>
   <% }) %>
 </div>
