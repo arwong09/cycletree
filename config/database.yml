@@ -49,10 +49,8 @@ development:
 #   username: cycletree
 #   password:
 # 
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: cycletree_production
-#   pool: 5
-#   username: cycletree
-#   password:
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: cycletree_production
+  pool: 5
