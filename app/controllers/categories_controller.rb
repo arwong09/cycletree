@@ -3,4 +3,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     render :index
   end
+  
+  def show
+    category = Category.find(params[:id])
+    @items = category.items
+    render 'items/index'
+  end
 end

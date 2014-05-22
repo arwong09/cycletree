@@ -4,6 +4,12 @@ class ItemsController < ApplicationController
     @user = current_user
   end
   
+  def index
+    category = Category.find(params[:category_id])
+    @items = category.items
+    render "items/index"
+  end
+  
   def create
     @item = current_user.items.new(item_params)
     

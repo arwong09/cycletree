@@ -4,13 +4,14 @@ Cycletree.Router = Backbone.Router.extend({
   },
   
   categoriesShow: function (id) {
-    alert('hey');
-    var showView = new Cycletree.CategoriesShow({
-      model: Cycletree.Categories.findWhere({id: id})
-    });
+    var theseItems = new Cycletree.Items([], {category_id: id});
+    var showView = new Cycletree.CategoriesShow({collection: theseItems});
     
-    Cycletree.Categories.fetch({
-      success: this._swapView(showView)
+    theseItems.fetch({
+      success: function() {
+        debugger
+        this._swapView(showView)
+      }
     })
   },
   

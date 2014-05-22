@@ -4,10 +4,9 @@ window.Cycletree = {
   Views: {},
   Routers: {},
   initialize: function() {
-    Cycletree.Categories = new Cycletree.Categories();
+    // Cycletree.Categories = new Cycletree.Categories();
     new Cycletree.Router();
     Backbone.history.start();
-    console.log("backbone is running!");
   }
 };
 
