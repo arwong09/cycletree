@@ -1,4 +1,8 @@
-<% items.each(function(item){ %>
-  <%= item.get('title') %>
-  <img src='<%= item.get('image_url') %>' />
-<% }) %>
+<div class="col-xs-8 col-xs-offset-2">
+  <% items.each(function(item){ %>
+    <div class='poster poster-show'>
+      <%= item.get('title') %>
+      <img src='<%= item.get('small_url') %>' />
+    </div>
+  <% }) %>
+</div>
