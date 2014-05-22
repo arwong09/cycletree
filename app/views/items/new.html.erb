@@ -1,23 +1,48 @@
-<%= form_for [current_user, @item], url: user_items_url(current_user), method: :post, html: { multipart: true } do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  
-  <%= f.label :condition %>
-  <%= f.text_field :condition %>
-  
-  <%= f.label :features %>
-  <%= f.text_field :features %>
-  
-  <%= select("item", "categories", Category.all.collect { |c| [ c.title, c.id ] }, {include_blank: 'None'}) %>
-  
-  <%= f.file_field :image %>
-  
-  <%= f.submit "post bike" %>
-<% end %>
+<div class="col-xs-8 col-xs-offset-2">
+  <div class='panel panel-default'>
+    <div class="panel-heading">
+      Post your bike on Cycle Tree
+    </div>
+    <div class="panel-body">
+      <%= form_for [current_user, @item], url: user_items_url(current_user), method: :post, html: { multipart: true, class: 'form-inline' } do |f| %>
+      <div class="form-group" id="form-item-title">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price %>
+        <%= f.text_field :price, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <label for="contact_email">Contact Email</label>
+        <input type="text" name="user[email]" id="contact_email" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.label :condition %>
+        <%= f.text_field :condition, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :features %>
+        <%= f.text_field :features, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= select("item", "categories", Category.all.collect { |c| [ c.title, c.id ] }, {include_blank: 'None'}, class: 'form-control') %>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "post bike", class: 'form-control' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
