@@ -36,6 +36,8 @@ gem 'backbone-on-rails'
 
 gem 'rails_12factor'
 
+gem 'rmagick'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

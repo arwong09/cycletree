@@ -16,11 +16,11 @@
           <%= f.text_field :price, class: 'form-control' %>
         </div>
       
-        <div class="form-group" id="form-item-email">
+        <!-- <div class="form-group" id="form-item-email">
           <label for="contact_email">Contact Email</label>
           <input type="text" name="user[email]" 
             id="contact_email" class="form-control">
-        </div>
+        </div> -->
       
         <div class="form-group" id="form-item-description">
           <%= f.label :description %>
@@ -59,7 +59,7 @@
             <div class="photo-square">
             </div>
             <div class="form-group">
-              <%= f.file_field :image, class: 'form-control' %>
+              <%= f.file_field :image %>
             </div>
           </div>
         </div>
