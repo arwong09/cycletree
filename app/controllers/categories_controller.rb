@@ -1,7 +1,10 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    render :index
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render 'categories/index' }
+    end
   end
   
   def show
