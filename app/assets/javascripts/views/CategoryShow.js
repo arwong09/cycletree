@@ -34,7 +34,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   filter: function(event) {
     var condition = $(event.target).data('condition');
     var filteredArr = this.collection.where({condition: condition});
-    var filteredCollection = new Cycletree.Items(filteredArr, {});
+    var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
     this.filteredRender(filteredCollection);
     
     this.$('.btn-options').removeClass('active');
