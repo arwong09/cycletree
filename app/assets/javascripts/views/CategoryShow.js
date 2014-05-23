@@ -12,9 +12,9 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   },
   
   filterNew: function() {
-    debugger
-    var filtered = this.collection.where({condition: "new"});
-    var filteredContent = this.template({items: filtered});
+    var filteredArr = this.collection.where({condition: "new"});
+    var filteredColl = new Cycletree.Items(filteredArr, {});
+    var filteredContent = this.template({items: filteredColl});
     this.$el.html(filteredContent);
     return this;
   },
