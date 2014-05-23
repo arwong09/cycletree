@@ -26,19 +26,22 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   },
   
   events: {
-    "click #options-new": "filterNew",
+    "click button#options-new": "filter",
     "click #options-all": "render",
-    "click #options-used": "filterUsed"
+    "click #options-used": "filter"
   },
   
-  filterNew: function() {
-    var filteredArr = this.collection.where({condition: "New"});
+  filter: function(event) {
+    var condition = $(event.target).data('condition');
+    var filteredArr = this.collection.where({condition: condition});
     var filteredCollection = new Cycletree.Items(filteredArr, {});
     this.filteredRender(filteredCollection);
     
-    this.$('label#options-all').removeClass('active');
-    this.$('label#options-used').removeClass('active');
-    this.$('label#options-new').addClass('active');
+    this.$('.btn-options').removeClass('active');
+    // this.$('button#options-new').addClass('active');
+    var id = $(event.target).attr('id')
+    this.$('#' + id).addClass('active');
+  
     return this;
   },
   
