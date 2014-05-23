@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="col-xs-6">
-    <div class="btn-group pull-right">
+    <div class="btn-group pull-left">
       <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
         Price<span class="caret"></span>
       </button>
@@ -35,26 +35,28 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-8 col-xs-offset-2"> 
-    <% _(10).times(function(){items.each(function(item){ %>
-      <div class='poster poster-show'>
-        <a href="/categories/<%= items.category_id %>/items/<%= item.get('id') %>">
-          <img src='<%= item.get('thumb_url') %>' />
-        </a>
-        <div class="poster-item-title">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="inner-col"> 
+      <% _(10).times(function(){items.each(function(item){ %>
+        <div class='poster poster-show'>
           <a href="/categories/<%= items.category_id %>/items/<%= item.get('id') %>">
-            <%= item.get('title') %>
+            <img src='<%= item.get('thumb_url') %>' />
           </a>
+          <div class="poster-item-title">
+            <a href="/categories/<%= items.category_id %>/items/<%= item.get('id') %>">
+              <%= item.get('title') %>
+            </a>
+          </div>
+          <div class="poster-item-subtitle">
+            <span class="poster-item-owner">
+              <a href="/users/<%= item.get('owner_id') %>">
+                <%= item.get('owner') %>
+              </a>
+            </span>
+            <span class="poster-item-price">$<%= item.get('price') %></span>
+          </div>
         </div>
-        <div class="poster-item-subtitle">
-          <span class="poster-item-owner">
-            <a href="/users/<%= item.get('owner_id') %>">
-            <%= item.get('owner') %>
-          </a>
-          </span>
-          <span class="poster-item-price">$<%= item.get('price') %></span>
-        </div>
+        <% })}) %>
       </div>
-    <% })}) %>
   </div>
 </div>
