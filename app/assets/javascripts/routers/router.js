@@ -26,8 +26,12 @@ Cycletree.Router = Backbone.Router.extend({
   },
   
   itemsShow: function(id) {
-    var theseItems = new Cycletree.Item([], {id: id}).fetch();
-    debugger
+    var item = new Cycletree.Item([], {id: id}).fetch({
+      success: function() {
+        var itemsShow = new Cycletree.ItemsShow({model: item});
+        this._swapView(itemsShow);
+      }.bind(this)
+    })
   },
 
   _swapView: function (newView) {
