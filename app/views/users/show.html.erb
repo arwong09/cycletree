@@ -1,2 +1,2 @@
-<h1>Welcome <%= current_user.username %>!</h1>
-<%= link_to "sell your bike", new_user_item_url(current_user) %>
+<h1>Welcome <%= @user.username %>!</hi>
+<%= link_to "Edit your Profile", edit_user_url(@user) %>

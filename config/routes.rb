@@ -1,7 +1,7 @@
 Cycletree::Application.routes.draw do
   root to: 'categories#index'
   
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:new, :create, :show, :update, :edit] do
     resources :items, only: [:new, :create, :show]
   end
   
