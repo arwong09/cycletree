@@ -1,13 +1,14 @@
-<div class="container">
-<div class="col-xs-8 col-xs-offset-2">
-  <div class="jumbotron" id="jumbotron-cat-show">
-    <h1>Shop Fixed Gear Bicycles</h1>
-  </div>
-</div>
+<div class="container" id="container-category-show">
+  <div clas="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="jumbotron" id="jumbotron-cat-show">
+        <h1>Shop Fixed Gear Bicycles</h1>
+      </div>
+    </div>
+  </div><!-- HEADER ROW -->
 
-<div class="row">
-  <div class="col-xs-3 col-xs-offset-1">
-    <div class="btn-group">
+  <div class="row">
+    <div class="btn-group pull-left">
       <button class="btn btn-options active btn-xs" id="options-all">
         All Cycles
       </button>
@@ -17,36 +18,37 @@
       </button>
       
       <button class="btn btn-options btn-xs" id="options-used" 
-        data-condition="Used">Used Cycles
+        data-condition="Used" value="Used Cycles">Used Cycles
       </button>
     </div>
-  </div>
+    
+    <div class="col-xs-6">
+      <div class="btn-group pull-left">
+        <button class="btn btn-default btn-xs dropdown-toggle" 
+          type="button" data-toggle="dropdown">Price<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Any price</a></li>
+          <li><a href="#">Under $500</a></li>
+          <li><a href="#">$500 - $1000</a></li>
+          <li><a href="#">$1000 - $2500</a></li>
+          <li><a href="#">Over $2500</a></li>
+        </ul>
+      </div>
+    </div><!-- PRICE FILTER -->
+  </div><!-- FILTERS ROW -->
   
-  <div class="col-xs-6">
-    <div class="btn-group pull-left">
-      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-        Price<span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Any price</a></li>
-        <li><a href="#">Under $500</a></li>
-        <li><a href="#">$500 - $1000</a></li>
-        <li><a href="#">$1000 - $2500</a></li>
-        <li><a href="#">Over $2500</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="row">
+  <div class="row">
     <div class="col-xs-3">
       <% _(10).times(function(){items1.each(function(item){ %>
         <div class='poster poster-show'>
-          <a href="/categories/<%= items1.category_id %>/items/<%= item.get('id') %>">
+          <a href="/categories/<%= items1.category_id %>/items/
+            <%= item.get('id') %>">
             <img src='<%= item.get('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
-            <a href="/categories/<%= items1.category_id %>/items/<%= item.get('id') %>">
+            <a href="/categories/<%= items1.category_id %>/items/
+              <%= item.get('id') %>">
               <%= item.get('title') %>
             </a>
           </div>
@@ -59,16 +61,19 @@
             <span class="poster-item-price">$<%= item.get('price') %></span>
           </div>
         </div>
-        <% })}) %>
-    </div> 
+      <% })}) %>
+    </div>
+     
     <div class="col-xs-3">
       <% _(10).times(function(){items2.each(function(item){ %>
         <div class='poster poster-show'>
-          <a href="/categories/<%= items2.category_id %>/items/<%= item.get('id') %>">
+          <a href="/categories/<%= items2.category_id %>/items/
+            <%= item.get('id') %>">
             <img src='<%= item.get('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
-            <a href="/categories/<%= items2.category_id %>/items/<%= item.get('id') %>">
+            <a href="/categories/<%= items2.category_id %>/items/
+              <%= item.get('id') %>">
               <%= item.get('title') %>
             </a>
           </div>
@@ -83,14 +88,17 @@
         </div>
         <% })}) %>
     </div>
+    
     <div class="col-xs-3">
       <% _(10).times(function(){items3.each(function(item){ %>
         <div class='poster poster-show'>
-          <a href="/categories/<%= items3.category_id %>/items/<%= item.get('id') %>">
+          <a href="/categories/<%= items3.category_id %>/items/
+            <%= item.get('id') %>">
             <img src='<%= item.get('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
-            <a href="/categories/<%= items3.category_id %>/items/<%= item.get('id') %>">
+            <a href="/categories/<%= items3.category_id %>/items/
+              <%= item.get('id') %>">
               <%= item.get('title') %>
             </a>
           </div>
@@ -103,16 +111,19 @@
             <span class="poster-item-price">$<%= item.get('price') %></span>
           </div>
         </div>
-        <% })}) %>
+      <% })}) %>
     </div> 
+    
     <div class="col-xs-3">
       <% _(10).times(function(){items4.each(function(item){ %>
         <div class='poster poster-show'>
-          <a href="/categories/<%= items4.category_id %>/items/<%= item.get('id') %>">
+          <a href="/categories/<%= items4.category_id %>/items/
+            <%= item.get('id') %>">
             <img src='<%= item.get('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
-            <a href="/categories/<%= items4.category_id %>/items/<%= item.get('id') %>">
+            <a href="/categories/<%= items4.category_id %>/items/
+              <%= item.get('id') %>">
               <%= item.get('title') %>
             </a>
           </div>
@@ -125,9 +136,7 @@
             <span class="poster-item-price">$<%= item.get('price') %></span>
           </div>
         </div>
-        <% })}) %>
+      <% })}) %>
     </div>
-      
-      </div>
-  </div>
+  </div><!-- BIKES ROW -->
 </div>
