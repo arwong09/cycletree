@@ -1,6 +1,22 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#item-show-container {
+  width: 1088px;
+}
+
+#jumbotron-item-show {
+  background-color: #e5f4f7;
+  border-radius: 3px;
+  width: 570px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+#panel-item-show-cart {
+  background-color: #e4f3d9;
+  margin-top: 15px;
+}
 
 #new_item input {
   width: 100%;
@@ -24,13 +40,6 @@
 
 #form-item-description textarea {
   width: 100%;
-}
-
-#jumbotron-item-show {
-  background-color: #e5f4f7;
-  border-radius: 3px;
-  width: 570px;
-  padding: 20px;
 }
 
 .photo-square {
@@ -58,9 +67,7 @@
   margin-left: 80px;
 }
 
-.panel-item-show-cart {
-  background-color: #e4f3d9;
-}
+
 
 .panel-body-item-show-cart {
   background-color: white;
