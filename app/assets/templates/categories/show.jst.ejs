@@ -39,7 +39,7 @@
   </div><!-- FILTERS ROW -->
   
   <div class="row">
-    <div class="col-xs-3">
+    <div class="col-xs-2 col-xs-offset-1">
       <% _(10).times(function(){items1.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items1.category_id %>/items/
@@ -64,7 +64,7 @@
       <% })}) %>
     </div>
      
-    <div class="col-xs-3">
+    <div class="col-xs-2">
       <% _(10).times(function(){items2.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items2.category_id %>/items/
@@ -89,7 +89,7 @@
         <% })}) %>
     </div>
     
-    <div class="col-xs-3">
+    <div class="col-xs-2">
       <% _(10).times(function(){items3.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items3.category_id %>/items/
@@ -114,7 +114,7 @@
       <% })}) %>
     </div> 
     
-    <div class="col-xs-3">
+    <div class="col-xs-2">
       <% _(10).times(function(){items4.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items4.category_id %>/items/
@@ -123,6 +123,31 @@
           </a>
           <div class="poster-item-title">
             <a href="/categories/<%= items4.category_id %>/items/
+              <%= item.get('id') %>">
+              <%= item.get('title') %>
+            </a>
+          </div>
+          <div class="poster-item-subtitle">
+            <span class="poster-item-owner">
+              <a href="/users/<%= item.get('owner_id') %>">
+                <%= item.get('owner') %>
+              </a>
+            </span>
+            <span class="poster-item-price">$<%= item.get('price') %></span>
+          </div>
+        </div>
+      <% })}) %>
+    </div>
+    
+    <div class="col-xs-2">
+      <% _(10).times(function(){items5.each(function(item){ %>
+        <div class='poster poster-show'>
+          <a href="/categories/<%= items5.category_id %>/items/
+            <%= item.get('id') %>">
+            <img src='<%= item.get('thumb_url') %>' />
+          </a>
+          <div class="poster-item-title">
+            <a href="/categories/<%= items5.category_id %>/items/
               <%= item.get('id') %>">
               <%= item.get('title') %>
             </a>

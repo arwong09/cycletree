@@ -2,25 +2,27 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   template: JST['categories/show'],
   
   render: function() {
-    var columns = this.collection.parseColumns(4);
+    var columns = this.collection.parseColumns(5);
     var items1 = columns[0];
     var items2 = columns[1];
     var items3 = columns[2];
     var items4 = columns[3];
+    var items5 = columns[4];
     
-    var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
+    var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4, items5: items5});
     this.$el.html(renderedContent);
     return this;
   },
   
   filteredRender: function(filteredCollection) {
-    var columns = filteredCollection.parseColumns(4);
+    var columns = filteredCollection.parseColumns(5);
     var items1 = columns[0];
     var items2 = columns[1];
     var items3 = columns[2];
     var items4 = columns[3];
+    var items5 = columns[4];
     
-    var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
+    var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4, items5: items5});
     this.$el.html(renderedContent);
     return this;
   },
