@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    render "items/show"
+    render :show
   end
   
   private

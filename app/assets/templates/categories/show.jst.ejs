@@ -24,11 +24,11 @@
   <div class="col-xs-8 col-xs-offset-2"> 
     <% _(10).times(function(){items.each(function(item){ %>
       <div class='poster poster-show'>
-        <a href="/#categories/<%= items.category_id %>/items/<%= item.get('id') %>">
+        <a href="/categories/<%= items.category_id %>/items/<%= item.get('id') %>">
           <img src='<%= item.get('thumb_url') %>' />
         </a>
         <div class="poster-item-title">
-          <a href="/#categories/<%= items.category_id %>/items/<%= item.get('id') %>">
+          <a href="/categories/<%= items.category_id %>/items/<%= item.get('id') %>">
             <%= item.get('title') %>
           </a>
         </div>
