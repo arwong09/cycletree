@@ -66,3 +66,20 @@
   background-color: white;
   margin: 6px;
 }
+
+#btn-add-to-cart {
+  width: calc(100% - 12px);
+  border-color: #7ab008 #76a80d #779539;
+  background: -webkit-linear-gradient(top,#b4d679 2%,#8dc035 8%,#82b809 58%,#82b809 95%,#7ab008);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 6px 6px 6px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+}
+
+#btn-add-to-cart div:hover {
+  color: white;
+  cursor: pointer;
+}

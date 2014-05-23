@@ -40,16 +40,18 @@
         </div>
     </div>
     
-    <div class="col-xs-5"><!-- BEGIN RIGHT PANE-->
+    <div class="col-xs-5"><!-- BEGIN RIGHT PANE -->
       <div class="panel panel-item-show-cart">
         <div class="panel-body panel-body-item-show-cart">
-          <%= @item.title %>
-          <%= @item.price %>
+          <h3><%= @item.title %></h3>
+          $<%= @item.price %>
+          <%= @item.condition %>
           <div class="panel-item-show-features">
+            <h4>Overview</h4>
             <%= @item.features %>
           </div>
         </div>
-        <div class='btn btn-primary'>Add to Cart</div>
+        <div class='btn' id='btn-add-to-cart'>Add to Cart</div>
       </div>
     </div>
   </div>
