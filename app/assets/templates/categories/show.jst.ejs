@@ -1,5 +1,5 @@
-<div class="col-xs-8 col-xs-offset-2">
-  <% items.each(function(item){ %>
+<div class="col-xs-8 col-xs-offset-2"> 
+  <% _(10).times(function(){items.each(function(item){ %>
     <div class='poster poster-show'>
       <a href="/items/<%= item.get('id') %>">
         <img src='<%= item.get('thumb_url') %>' />
@@ -12,5 +12,5 @@
       </a>
         $<%= item.get('price') %>
     </div>
-  <% }) %>
+  <% })}) %>
 </div>
