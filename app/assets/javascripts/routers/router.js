@@ -2,7 +2,7 @@ Cycletree.Router = Backbone.Router.extend({
   routes: {
     '': 'categoriesIndex',
     'categories/:id': 'categoriesShow',
-    'items/:id' : 'itemsShow'
+    'categories/:category_id/items/:id' : 'itemsShow'
   },
   
   categoriesIndex: function() {
@@ -25,8 +25,10 @@ Cycletree.Router = Backbone.Router.extend({
     })
   },
   
-  itemsShow: function(id) {
-    var item = new Cycletree.Items([], {category: 0}).getOrFetch(id);
+  itemsShow: function(category_id, id) {
+    var category = Cycletree.Categories.get(category_id);
+    debugger
+    var item = new Cycletree.Items([], {category: category_id}).getOrFetch(id);
     debugger
     var itemsShow = new Cycletree.ItemsShow({model: item});
     this._swapView(itemsShow);
