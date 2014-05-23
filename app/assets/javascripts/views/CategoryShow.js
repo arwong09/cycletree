@@ -26,7 +26,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   },
   
   events: {
-    "click button#options-new": "filter",
+    "click #options-new": "filter",
     "click #options-all": "render",
     "click #options-used": "filter"
   },
@@ -38,21 +38,9 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     this.filteredRender(filteredCollection);
     
     this.$('.btn-options').removeClass('active');
-    // this.$('button#options-new').addClass('active');
     var id = $(event.target).attr('id')
     this.$('#' + id).addClass('active');
   
-    return this;
-  },
-  
-  filterUsed: function() {
-    var filteredArr = this.collection.where({condition: "Used"});
-    var filteredColl = new Cycletree.Items(filteredArr, {});
-    var filteredContent = this.template({items: filteredColl});
-    this.$el.html(filteredContent);
-    this.$('label#options-all').removeClass('active');
-    this.$('label#options-used').addClass('active');
-    this.$('label#options-new').removeClass('active');
     return this;
   },
   
