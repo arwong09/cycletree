@@ -13,8 +13,8 @@
         
         <%= image_tag @item.image.url(:show) %>
         
-        <ul class="nav nav-tabs">
-          <li class="active">
+        <ul class="nav nav-tabs nav-tabs-item-show">
+          <li class="active" id='tab-item-show-first'>
             <a href="#tab-details" data-toggle="tab">Item Details</a>
           </li>
           <li>
@@ -26,14 +26,14 @@
         </ul>
         
         <div class="tab-content">
-          <div class="tab-pane active" id='tab-details'>
+          <div class="tab-pane pane-item-show active" id='tab-details'>
             <%= @item.description %>
             <%= @item.features %>
           </div>
-          <div class="tab-pane" id='tab-reviews'>
+          <div class="tab-pane pane-item-show" id='tab-reviews'>
            reviews
           </div>
-          <div class="tab-pane" id='tab-shipping'>
+          <div class="tab-pane pane-item-show" id='tab-shipping'>
             shipping info
           </div>
         </div>
