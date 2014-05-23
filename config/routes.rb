@@ -9,7 +9,7 @@ Cycletree::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   
   resources :categories, only: [:index, :show] do
-    resources :items, only: [:index]
+    resources :items, only: [:index, :show]
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
