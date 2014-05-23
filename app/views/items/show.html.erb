@@ -6,7 +6,20 @@
           <h4>Like this item?</h4>
           Add it to your favorites to revisit it later.
         </div>
-      <%= image_tag @item.image.url(:show) %>
+        
+        <%= image_tag @item.image.url(:show) %>
+        
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#details" data-toggle="tab">Item Details</a>
+          </li>
+          <li>
+            <a href="#details" data-toggle="tab">Reviews</a>
+          </li>
+          <li>
+            <a href="#details" data-toggle="tab">Shipping Details</a>
+          </li>
+        </ul>
     </div>
   </div>
 </div>
