@@ -1,6 +1,6 @@
 Cycletree.Router = Backbone.Router.extend({
   routes: {
-    '': 'categoriesIndex',
+    // '': 'categoriesIndex',
     'categories/:id': 'categoriesShow',
     // 'categories/:category_id/items/:id' : 'itemsShow'
   },
