@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
   
   has_many :items, class_name: :Item, foreign_key: :owner_id
-  has_attached_file :image, styles: { thumb: "180x500#", small: "140x140>" }
+  has_attached_file :image, styles: { thumb: "68x68#", profile: "230x230#" }
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   
   def self.find_by_credentials(username, password)
