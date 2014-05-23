@@ -1,42 +1,41 @@
 <div class="container" id="container-category-show">
   <div clas="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-11 col-xs-offset-1">
       <div class="jumbotron" id="jumbotron-cat-show">
         <h1>Shop Fixed Gear Bicycles</h1>
       </div>
+      
+      <div class="row">
+        <div class="btn-group pull-left">
+          <button class="btn btn-options active btn-xs" id="options-all">
+            All Cycles
+          </button>
+      
+          <button class="btn btn-options btn-xs" id="options-new" 
+            data-condition="New">New Cycles
+          </button>
+      
+          <button class="btn btn-options btn-xs" id="options-used" 
+            data-condition="Used" value="Used Cycles">Used Cycles
+          </button>
+        </div>
+    
+        <div class="btn-group pull-left">
+          <button class="btn btn-default btn-xs dropdown-toggle" 
+            type="button" data-toggle="dropdown">
+            Price<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Any price</a></li>
+            <li><a href="#">Under $500</a></li>
+            <li><a href="#">$500 - $1000</a></li>
+            <li><a href="#">$1000 - $2500</a></li>
+            <li><a href="#">Over $2500</a></li>
+          </ul>
+        </div><!-- PRICE FILTER -->
+      </div><!-- FILTERS ROW -->
     </div>
   </div><!-- HEADER ROW -->
-
-  <div class="row">
-    <div class="btn-group pull-left">
-      <button class="btn btn-options active btn-xs" id="options-all">
-        All Cycles
-      </button>
-      
-      <button class="btn btn-options btn-xs" id="options-new" 
-        data-condition="New">New Cycles
-      </button>
-      
-      <button class="btn btn-options btn-xs" id="options-used" 
-        data-condition="Used" value="Used Cycles">Used Cycles
-      </button>
-    </div>
-    
-    <div class="col-xs-6">
-      <div class="btn-group pull-left">
-        <button class="btn btn-default btn-xs dropdown-toggle" 
-          type="button" data-toggle="dropdown">Price<span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Any price</a></li>
-          <li><a href="#">Under $500</a></li>
-          <li><a href="#">$500 - $1000</a></li>
-          <li><a href="#">$1000 - $2500</a></li>
-          <li><a href="#">Over $2500</a></li>
-        </ul>
-      </div>
-    </div><!-- PRICE FILTER -->
-  </div><!-- FILTERS ROW -->
   
   <div class="row">
     <div class="col-xs-2 col-xs-offset-1">
@@ -164,4 +163,5 @@
       <% })}) %>
     </div>
   </div><!-- BIKES ROW -->
+  
 </div>
