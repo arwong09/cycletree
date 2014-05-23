@@ -4,5 +4,15 @@ html, body{
 }
 
 body {
-  background-color: #f0f0f0;
+/*  background-color: #f0f0f0;*/
+}
+
+.jumbotron {
+  background-color: white;
+  margin: 0 0 40px -8px;
+  padding: 0;
+}
+
+.jumbotron h1 {
+  font-size: 48px;
 }

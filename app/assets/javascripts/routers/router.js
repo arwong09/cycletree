@@ -1,7 +1,8 @@
 Cycletree.Router = Backbone.Router.extend({
   routes: {
     '': 'categoriesIndex',
-    'categories/:id': 'categoriesShow'
+    'categories/:id': 'categoriesShow',
+    'items/:id' : 'itemsShow'
   },
   
   categoriesIndex: function() {
@@ -24,6 +25,10 @@ Cycletree.Router = Backbone.Router.extend({
     })
   },
   
+  itemsShow: function(id) {
+    var item = new Cycletree.Item()
+  },
+
   _swapView: function (newView) {
     if (this.currentView) {
       this.currentView.remove();
