@@ -30,6 +30,9 @@ Cycletree.Items = Backbone.Collection.extend({
     var colSize = Math.floor(this.length / n);
     var prevColEnd = 0;
     var columns = [];
+    if (colSize < 1) {
+      colSize = 1;
+    }
     
     _(n).times(function() {
       
