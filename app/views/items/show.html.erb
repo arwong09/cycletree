@@ -9,8 +9,16 @@
     <div class="panel-body">
       <div class="col-xs-7">
         <div class="jumbotron" id="jumbotron-item-show">
-          <h4>Like this item?</h4>
-          Add it to your favorites to revisit it later.
+          <div class="col-xs-3">
+            <div class='btn btn-secondary item-show-favorite'>
+              <span class='glyphicon glyphicon-heart'></span> Favorite
+            </div>
+          </div>
+          <div class="col-xs-9">
+            <h4>Like this item?</h4>
+            Add it to your favorites to revisit it later.
+          </div>
+          <div class='row'></div>
         </div>
         
         <%= image_tag @item.image.url(:show) %>
@@ -52,7 +60,8 @@
             Ask a Question
           </div>
           <div class="item-show-condition">
-            <%= @item.condition %>
+            <h5>Condition</h5>
+            <a href="#"><%= @item.condition %></a>
           </div>
           <div class="panel-item-show-features">
             <h4>Overview</h4>
