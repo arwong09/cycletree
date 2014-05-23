@@ -9,14 +9,14 @@ Cycletree.Items = Backbone.Collection.extend({
     this.category_id = options.category_id
   },
   
-  getOrFetch: function(id) {
+  getOrFetch: function(id, category_id) {
     var items = this;
     var model;
     
     if(model = this.get(id)) {
       model.fetch();
     } else {
-      model = new Cycletree.Item({id: id});
+      model = new Cycletree.Item([], {id: id, category_id: category_id});
       model.fetch({
         success: function() { items.add(model); }
       })
