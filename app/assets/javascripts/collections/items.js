@@ -24,5 +24,23 @@ Cycletree.Items = Backbone.Collection.extend({
     };
     
     return model;
+  },
+  
+  parseColumns: function(n) {
+    var colSize = Math.floor(this.length / n);
+    var prevColEnd = 0;
+    var columns = [];
+    
+    _(n).times(function() {
+      
+      columns.push(
+        new Cycletree.Items(this.slice(prevColEnd, prevColEnd + colSize), 
+        {category_id: this.category_id})
+      );
+      
+      prevColEnd += colSize;
+    }.bind(this));
+    
+    return columns;
   }
 });
