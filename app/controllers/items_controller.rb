@@ -32,7 +32,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     other_items = @item.owner.items
     @num_items = other_items.length
-    @more_items = other_items.select { |i| i != @item && i.image.url != '/images/thumb/missing.png'}[0..4]
+    @more_items_side = other_items.shuffle.select { |i| i != @item && i.image.url != '/images/thumb/missing.png'}[0..7]
+    @more_items = other_items.shuffle.select { |i| i != @item && i.image.url != '/images/thumb/missing.png'}[0..4]
     render :show
   end
   
