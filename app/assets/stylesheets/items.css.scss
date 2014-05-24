@@ -67,11 +67,33 @@
   margin-left: 80px;
 }
 
+.item-show-more-item {
+  float: left;
+}
 
+.poster-more-item {
+  padding: 3px;
+  border-radius: 2px;
+/*  border: 1px solid #eee;*/
+  box-shadow: 0 0 1px rgba(0,0,0,0.3);
+  margin: 0 10px;
+  float: left;
+  width: 75px;
+  height: 75px;
+}
+
+#item-show-more-count {
+  width: 69px;
+  height: 69px;
+}
 
 .panel-body-item-show-cart {
   background-color: white;
   margin: 6px;
+}
+
+#item-show-listings {
+  float: right;
 }
 
 #btn-add-to-cart {

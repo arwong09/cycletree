@@ -1,16 +1,31 @@
 <div class="container" id="item-show-container">
 <div class="row">
-<!-- <div class="col-xs-12"> -->
+
   <div class="col-xs-12">
     <div id="item-show-owner-pic">
       <%= image_tag @item.owner.image.url(:item_thumb) %>
     </div>
     
-    <div id="owner-item-show" class="pull-left">
-      <h3><a href='<%= user_url(@item.owner) %>'><%= @item.owner.username %></h3>
+    <div id="item-show-owner" class="pull-left">
+      <h3><a href='<%= user_url(@item.owner) %>'><%= @item.owner.username %></a></h3>
       <div class="pull-left btn btn-secondary item-show-review">
-        <span class="glyphicon glyphicon-pencil"></span>Leave a Review</a>
+        <span class="glyphicon glyphicon-pencil"></span>Leave a Review
       </div>
+    </div>
+    
+    <div id="item-show-listings">
+      <ul>
+      <% @more_items.each do |item| %>
+        <li class="item-show-more-item poster-more-item">
+          <%= image_tag item.image.url(:show_more) %>
+        </li>
+      <% end %>
+      <li class="poster-more-item">
+        <div class="item-show-more-count">
+          <h3><%= @num_items %></h3>
+          Cycles
+        </div>
+      </li>
     </div>
   </div>
 </div>
