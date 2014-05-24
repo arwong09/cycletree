@@ -36,7 +36,7 @@
                 </li>
                 <li><a href="#">Buy a bike</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Sign out</a></li>
+                <li><a href="#" id="sign-out">Sign out</a></li>
               </ul>
             </li>
             <% end %>
@@ -63,5 +63,13 @@
 
     <%= yield %>
   </div>
+  <script>
+    $('#sign-out').click(function(event) {
+      $.ajax({
+        type: 'DELETE',
+        url: '/session'
+      })
+    }) 
+  </script>
   </body>
 </html>
