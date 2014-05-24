@@ -1,3 +1,17 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#profile-picture {
+  border-radius: 3px;
+  border: 1px solid #aaa;
+}
+
+#col-profile-left {
+  padding-left: 39px;
+}
+
+.panel-profile-left {
+  margin-top: 25px;
+  font-weight: bold;
+}
