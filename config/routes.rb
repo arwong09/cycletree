@@ -7,6 +7,7 @@ Cycletree::Application.routes.draw do
   
   resources :items, only: [:show]
   resource :session, only: [:new, :create, :destroy]
+  resources :reviews, only: [:create, :show]
   
   resources :categories, only: [:index, :show] do
     resources :items, only: [:index, :show]

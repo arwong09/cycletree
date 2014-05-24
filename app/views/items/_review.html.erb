@@ -1,23 +1,25 @@
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
-          aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                 aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Review</h4>
-              </div>
-              
-              <div class="modal-body">
-                Was <%= owner.username %> helpful?
-              </div>
-              
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" 
-                  data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">
-                  Post Review</button>
-              </div>
-            </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal"
+         aria-hidden="true">&times;</button>
+        <h4>Leave a review for <%= owner.username %></h4>
+        <form action="<%= reviews_url %>" method="post">
+          <div class="form-group">
+            <input class='form-control' type="text" 
+              name="review[body]" value="" id="review">
           </div>
-        </div>
+      
+
+        <button type="button" class="btn btn-default" 
+          data-dismiss="modal">Cancel</button>
+
+            <input class='btn btn-primary' type="submit" value="Post Review">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
