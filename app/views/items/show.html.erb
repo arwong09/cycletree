@@ -17,7 +17,6 @@
           <span class="glyphicon glyphicon-pencil"></span> Leave a Review
         </button>
         <%= render partial: "review", locals: {owner: @item.owner} %>
-       
       </div>
     </div>
     
@@ -25,7 +24,7 @@
       <ul>
       <% @more_items.each do |item| %>
         <li class="item-show-more-item poster-more-item">
-          <%= image_tag item.image.url(:show_more) %>
+          <%= link_to image_tag(item.image.url(:show_more)), item_url(item) %>
         </li>
       <% end %>
       <li class="poster-more-item">

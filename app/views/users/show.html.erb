@@ -42,6 +42,16 @@
     
     <div class="row">
       <h3>Reviews <span>(55)</span></h3>
+      <% @reviews.each do |review| %>
+        <div class="row user-show-review">
+          <div class="col-xs-1 user-show-review-pic">
+            <%= image_tag review.author.image.url(:comment_thumb) %>
+          </div>
+          <div class="col-xs-11 user-show-review-body">
+            <%= review.body %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

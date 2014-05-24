@@ -23,6 +23,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @num_listings = @user.items.length
       @items = @user.items.select { |i| i.image.url != '/images/thumb/missing.png' }[0..2]
+      @reviews = @user.received_reviews
     else
       redirect_to user_url(current_user)
     end
