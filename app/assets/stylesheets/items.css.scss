@@ -85,7 +85,32 @@
 #item-show-more-count {
   width: 69px;
   height: 69px;
+  display: block;
 }
+
+#item-show-more-count h3 {
+  text-align: center;
+  margin: 0;
+}
+
+#item-show-more-num {
+  font-size: 24px;
+  color: #0192b5;
+  margin: 0 auto;
+  display: block;
+  width: 50px;
+  text-align: center;
+}
+
+#item-show-more-word {
+  font-size: 24px;
+  color: #0192b5;
+  margin: 0 auto;
+  display: block;
+  width: 50px;
+  text-align: center;
+}
+
 
 .panel-body-item-show-cart {
   background-color: white;
