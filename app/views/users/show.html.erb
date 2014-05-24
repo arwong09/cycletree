@@ -24,11 +24,14 @@
       </div>
     </div>
     
-    <% @items.each do |item| %>
-      <div class="profile-item-listing">
-        <%= image_tag item.image.url(:profile_listing) %>
-      </div>
-    <% end %>
+    <div class="profile-listings-container">
+      <h3>Cycles <span id="listings-num">(<%= @num_listings %>)</span></h3>
+      <% @items.each do |item| %>
+        <div class="profile-item-listing">
+          <%= link_to image_tag(item.image.url(:profile_listing)), item_url(item) %>
+        </div>
+      <% end %>
+    </div>
   </div><!-- LEFT COLUMN -->
   
   <div class="col-xs-9">

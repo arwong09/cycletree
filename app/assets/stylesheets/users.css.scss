@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #profile-picture {
-  border-radius: 3px;
-  border: 1px solid #aaa;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 2px;
 }
 
 #col-profile-left {
@@ -14,4 +14,16 @@
 .panel-profile-left {
   margin-top: 25px;
   font-weight: bold;
+}
+
+.profile-item-listing {
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 2px;
+  margin-top: 15px;
+}
+
+#listings-num {
+  color: #aaa;
+  font-weight: 200;
+  font-size: 18px;
 }
