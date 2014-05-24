@@ -3,11 +3,11 @@ Cycletree::Application.routes.draw do
   
   resources :users, only: [:new, :create, :show, :update, :edit] do
     resources :items, only: [:new, :create, :show]
+    resources :reviews, only: [:create, :show]
   end
   
   resources :items, only: [:show]
   resource :session, only: [:new, :create, :destroy]
-  resources :reviews, only: [:create, :show]
   
   resources :categories, only: [:index, :show] do
     resources :items, only: [:index, :show]
