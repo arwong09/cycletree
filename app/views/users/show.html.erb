@@ -37,7 +37,7 @@
   <div class="col-xs-9">
     <div class="row">
       <h1>Hey<% if @user.full_name %>
-        , I'm <%= user.full_name.split(' ').first %>!
+        , I'm <%= @user.full_name.split(' ').first %>!
         <% end %>
       </h1>
       
@@ -45,7 +45,7 @@
     </div>
     
     <div class="row">
-      <h3>Reviews <span>(55)</span></h3>
+      <h3>Reviews <span>(<%= @num_reviews %>)</span></h3>
       <% @reviews.each do |review| %>
         <div class="row user-show-review">
           <div class="col-xs-1 user-show-review-pic">

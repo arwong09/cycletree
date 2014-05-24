@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       @num_listings = @user.items.length
       @items = @user.items.select { |i| i.image.url != '/images/thumb/missing.png' }[0..2]
       @reviews = @user.received_reviews
+      @num_reviews = @reviews.length
     else
       redirect_to user_url(current_user)
     end
