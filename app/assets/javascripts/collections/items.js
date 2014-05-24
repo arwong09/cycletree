@@ -27,7 +27,7 @@ Cycletree.Items = Backbone.Collection.extend({
   },
   
   parseColumns: function(n) {
-    var colSize = Math.round(this.length / n);
+    var colSize = (this.length / n);
     var prevColEnd = 0;
     var columns = [];
     if (colSize < 1) {
