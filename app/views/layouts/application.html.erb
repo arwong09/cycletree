@@ -36,7 +36,8 @@
                 </li>
                 <li><a href="#">Buy a bike</a></li>
                 <li class="divider"></li>
-                <li><a href="#" id="sign-out">Sign out</a></li>
+                <!-- <li><a href="#" id="sign-out">Sign out</a></li> -->
+                <li><%= link_to "Sign out", session_url, method: :delete %></li>
               </ul>
             </li>
             <% end %>
@@ -55,21 +56,13 @@
     </nav>
     <div id="below-nav">
     
-    <% if flash[:errors] %>
-      <% flash[:errors].each do |error|%>
-        <%= error %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error|%>
+          <%= error %>
+        <% end %>
       <% end %>
-    <% end %>
 
-    <%= yield %>
-  </div>
-  <script>
-    $('#sign-out').click(function(event) {
-      $.ajax({
-        type: 'DELETE',
-        url: '/session'
-      })
-    }) 
-  </script>
+      <%= yield %>
+    </div>
   </body>
 </html>

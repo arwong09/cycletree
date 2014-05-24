@@ -18,9 +18,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    if logout!
-      redirect_to new_session_url
-    end
+    logout!
+    redirect_to new_session_url
   end
   
   def user_params
