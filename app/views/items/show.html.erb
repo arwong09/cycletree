@@ -1,5 +1,5 @@
 <div class="container" id="item-show-container">
-<div class="row">
+<div class="row" id="item-show-header">
 
   <div class="col-xs-12">
     <div id="item-show-owner-pic">
@@ -11,8 +11,8 @@
         <a href='<%= user_url(@item.owner) %>'><%= @item.owner.username%></a>
       </h3>
       
-      <div class="pull-left btn btn-secondary item-show-review">
-        <button class="btn btn-primary btn-lg" data-toggle="modal"
+      <div class="pull-left">
+        <button class="btn btn-secondary btn-sm  item-show-review" data-toggle="modal"
          data-target="#myModal">
           <span class="glyphicon glyphicon-pencil"></span> Leave a Review
         </button>
