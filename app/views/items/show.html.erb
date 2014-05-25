@@ -106,8 +106,16 @@
       </div>
       
       <div class="panel" id="panel-item-show-more">
-        <div class="panel-body panel-body-item-show-more">
-          <%=  %>
+        <div class="panel-body" id="panel-body-item-show-more">
+          <% @more_items_side.each do |item| %>
+            <div class="poster-item-show-side">
+              <%= link_to image_tag(item.image.url(:show_side)), item_url(item) %>
+              <div class="poster-item-title">
+                <%= link_to item.title, item_url(item) %>
+                <span class="poster-item-price" style="float: left;">$<%= item.price %></span>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

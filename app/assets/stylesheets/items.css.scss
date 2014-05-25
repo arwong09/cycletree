@@ -178,3 +178,21 @@
 .inner-col {
   display: inline-block;
 }
+
+.poster-item-show-side {
+  float: left;
+  border-radius: 3px;
+  padding: 4px;
+  box-shadow: 0 0 1px rgba(0,0,0,0.4);
+  margin: 8px;
+}
+
+#panel-item-show-more {
+  border: 8px solid #e5f4f7;
+  padding: 0px;
+/*  padding: 8px;*/
+}
+
+#panel-body-item-show-more {
+  padding: 10px;
+}
