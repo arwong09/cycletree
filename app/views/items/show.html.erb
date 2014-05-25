@@ -108,16 +108,32 @@
       
       <div class="panel" id="panel-item-show-more">
         <div class="panel-body" id="panel-body-item-show-more">
-          <% @more_items_side.each do |item| %>
-            <div class="poster-item-show-side">
-              <%= link_to image_tag(item.image.url(:show_side)), item_url(item) %>
-              <div class="poster-item-title">
-                <%= link_to item.title, item_url(item) %>
-                <span class="poster-item-price" style="float: left;">$<%= item.price %></span>
+          <div class="col-xs-12">
+          <div id="item-show-more-container">
+            <div class="row">
+              <div class="col-xs-4 col-xs-offset-4">
+                <div id="item-show-more-header">
+                  <%= image_tag @item.owner.image.url(:item_thumb) %>
+                  <div id="item-show-more-owner">
+                    <%= link_to @item.owner.username, user_url(@item.owner) %>
+                  </div>                     
+                  <div id="item-show-more-owner-title">
+                  <%= @item.owner.title %>
+                </div>
               </div>
             </div>
-          <% end %>
+            <% @more_items_side.each do |item| %>
+              <div class="poster-item-show-side">
+                <%= link_to image_tag(item.image.url(:show_side)), item_url(item) %>
+                <div class="poster-item-title">
+                  <%= link_to item.title, item_url(item) %>
+                  <span class="poster-item-price" style="float: left;">$<%= item.price %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
+      </div>
       </div>
     </div>
   </div>

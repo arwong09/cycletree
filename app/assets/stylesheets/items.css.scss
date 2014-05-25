@@ -196,7 +196,8 @@
   border-radius: 3px;
   padding: 4px;
   box-shadow: 0 0 1px rgba(0,0,0,0.4);
-  margin: 8px;
+  margin-left: 8px;
+  width: 164px;
 }
 
 #panel-item-show-more {
@@ -224,4 +225,20 @@
 #item-show-header {
   margin-bottom: 30px;
   padding: 0 30px;
+}
+
+#item-show-more-header {
+  margin-bottom: 30px;
+  width: 100px;
+  margin: 10px auto;
+}
+
+#item-show-more-owner a {
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+}
+
+#item-show-more-owner-title {
+  color: #999;
 }

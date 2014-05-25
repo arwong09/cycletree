@@ -38,6 +38,10 @@ gem 'rails_12factor'
 
 gem 'rmagick'
 
+gem 'aws-sdk'
+
+gem 'figaro'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
