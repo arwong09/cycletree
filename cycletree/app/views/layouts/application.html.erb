@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cycletree</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><span id="logo">Cycle Tree</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='glyphicon glyphicon-user' href="#"></span><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="<%= user_url(current_user) %>">
+                  View your profile</a>
+                </li>
+                <li><a href="<%= edit_user_url(current_user) %>">
+                  Edit your profile</a>
+                </li>
+                <li><a href="#">Buy a bike</a></li>
+                <li class="divider"></li>
+                <li><a href="#" id="sign-out">Sign out</a></li>
+              </ul>
+            </li>
+            <% end %>
+            <li>
+              <% if current_user %>
+                <a href="/users/<%= current_user.id %>/items/new">
+                  Post a bike</a>
+                <% else %>
+                <a href='/session/new'>Sign in</a>
+              <% end %>
+              </li>
+              <li><a class="glyphicon glyphicon-shopping-cart" href="#"></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="below-nav">
+    
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error|%>
+        <%= error %>
+      <% end %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+  <script>
+    $('#sign-out').click(function(event) {
+      $.ajax({
+        type: 'DELETE',
+        url: '/session'
+      })
+    }) 
+  </script>
+  </body>
+</html>

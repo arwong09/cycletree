@@ -1,0 +1,72 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <div class='panel panel-default'>
+    <div class="panel-heading">
+      Post your bike on Cycle Tree
+    </div>
+    
+    <div class="panel-body">
+      <div class='col-xs-8'>
+        <%= form_for [current_user, @item], url: user_items_url(current_user), method: :post, html: { multipart: true, class: 'form-inline' } do |f| %>
+        <div class="form-group" id="form-item-title">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        <div class="form-group" id="form-item-price">
+          <%= f.label :price %>
+          <%= f.text_field :price, class: 'form-control' %>
+        </div>
+      
+        <div class="form-group" id="form-item-email">
+          <label for="contact_email">Contact Email</label>
+          <input type="text" name="user[email]" 
+            id="contact_email" class="form-control">
+        </div>
+      
+        <div class="form-group" id="form-item-description">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control', rows: '10' %>
+        </div>
+    
+        <div class="form-group" id="form-item-condition">
+          <%= f.label :condition %>
+          <%= f.text_field :condition, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :features %>
+          <%= f.text_field :features, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :type %>
+          <%= select("item", "categories", Category.all.collect do |c| 
+              [ c.title, c.id ] 
+            end, {include_blank: 'None'}, class: 'form-control') %>
+        </div><!-- Categories -->
+  
+        <div class="form-group">
+          <%= f.file_field :image %>
+          <%= f.submit "post bike", class: 'form-control btn btn-primary' %>
+        </div>
+      </div>
+      
+      <div class='col-xs-4'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Upload a photo
+          </div>
+     
+          <div class="panel-body">
+            <div class="glyphicon glyphicon-picture photo-square">
+            </div>
+            <div class="form-group">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
