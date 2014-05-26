@@ -160,11 +160,11 @@ img {
 }
 
 .poster-title {
-  width: 96%;
+  width: calc(100% - 10px);
   z-index: 0;
   height: 35px;
   line-height: 35px;
-  margin-left: 2%;
+  margin-left: 5px;
   position: relative;
   padding: 0 10px;
 }
