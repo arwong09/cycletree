@@ -4,12 +4,13 @@
       <div class="row">
         <div class="poster-outer">
           <div class="poster">
+          <% var i = 1; %>
             <a href="#">
-            <img src='<%= categories.get(1).get('index_large') %>' />
+            <img src='<%= categories.get(i).get('index_large') %>' />
           </div>
           
           <div class="poster-title">
-            Cool Bicycle</a>
+            <%= categories.get(i).get('title') %></a>
           </div>
         </div>
       </div>
@@ -17,19 +18,22 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(3).get('index_small') %>' />
-        </div>
-        <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <% i++ %>
+          <a href="#">
+            <img src='<%= categories.get(i).get('index_small') %>' />
+          </div>
+          <div class="poster-title">
+            <%= categories.get(i).get('title') %></a>
         </div>
       </div>
       
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          <% i++ %>
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
     </div>
@@ -37,19 +41,21 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          <% i++ %>
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
       
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          <% i++ %>
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
     </div>
@@ -59,18 +65,20 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          <% i++ %>
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
     </div>
@@ -78,10 +86,11 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
+          
           <img src='<%= categories.get(1).get('index_large') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle  </a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
     </div>
@@ -89,18 +98,20 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
     </div>
@@ -111,11 +122,12 @@
       <div class="row">
         <div class="poster-outer">
           <div class="poster">
-            <img src='<%= categories.get(1).get('index_large') %>' />
+            
+            <img src='<%= categories.get(i).get('index_large') %>' />
           </div>
           
           <div class="poster-title">
-            <a href="#">Cool Bicycle</a>
+            <a href="#"><%= categories.get(i).get('title') %></a>
           </div>
         </div>
       </div>
@@ -123,19 +135,21 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(3).get('index_small') %>' />
+          
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
       
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
     </div>
@@ -145,18 +159,20 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_small') %>' />
+          
+          <img src='<%= categories.get(i).get('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#">Cool Bicycle</a>
+          <a href="#"><%= categories.get(i).get('title') %></a>
         </div>
       </div>
     </div>
@@ -164,7 +180,8 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_large') %>' />
+          
+          <img src='<%= categories.get(i).get('index_large') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle  </a>
@@ -177,7 +194,8 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_med') %>' />
+          
+          <img src='<%= categories.get(i).get('index_med') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle</a>
@@ -186,7 +204,8 @@
       
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_med') %>' />
+          
+          <img src='<%= categories.get(i).get('index_med') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle</a>
@@ -195,7 +214,7 @@
       
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(1).get('index_med') %>' />
+          <img src='<%= categories.get(i).get('index_med') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle</a>

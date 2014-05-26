@@ -6,7 +6,8 @@ class Item < ActiveRecord::Base
     thumb: "-resize 400x800 -gravity Center -shave 80x0",
     show_side: "-resize 800x175 -gravity Center -crop 156x124+0+0",
     show_more: "-resize 800x85 -gravity Center -crop 69x69+0+0",
-    profile_listing: "-resize 300x800 -gravity Center -crop 230x153+0+0 +repage" },
+    profile_listing: "-resize 300x800 -gravity Center -crop 230x153+0+0 +repage",
+    index_med: "302x250", index_large: "468x382#", index_small: "216x186#" },
     default_style: :thumb
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 end
