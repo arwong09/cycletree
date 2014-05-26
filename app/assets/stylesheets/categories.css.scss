@@ -26,9 +26,9 @@ ul {
   background-color: white;
   border-radius: 3px;
   z-index: 2;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,.1);
   position: relative;
-  border-color: 1px solid #999;
+  border: 1px solid #eee;
 }
 
 img {
@@ -129,7 +129,7 @@ img {
 }
 
 #cat-index-top-block {
-  padding: 0 85px;
+  padding: 0 80px;
 }
 
 #cat-index-bottom-block {
@@ -160,11 +160,11 @@ img {
 }
 
 .poster-title {
-  width: 98%;
+  width: 96%;
   z-index: 0;
   height: 35px;
   line-height: 35px;
-  margin-left: 1%;
+  margin-left: 2%;
   position: relative;
   padding: 0 10px;
 }
