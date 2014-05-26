@@ -6,6 +6,7 @@ Cycletree.Router = Backbone.Router.extend({
   },
   
   categoriesIndex: function() {
+    debugger
     var indexView = new Cycletree.CategoriesIndex({collection: Cycletree.Categories})
     Cycletree.Categories.fetch({
       success: function() {

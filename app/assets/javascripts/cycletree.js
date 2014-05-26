@@ -11,5 +11,7 @@ window.Cycletree = {
 };
 
 $(document).ready(function(){
-  Cycletree.initialize();
+  if ($('#initialize-backbone').length) {
+    Cycletree.initialize();
+  }
 });
