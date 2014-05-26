@@ -22,6 +22,20 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     
     var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
     this.$el.html(renderedContent);
+    this.$("#search-filter").val("hello");
+    return this;
+  },
+  
+  searchRender: function(filteredCollection, prevQuery) {
+    var columns = filteredCollection.parseColumns(4);
+    var items1 = columns[0];
+    var items2 = columns[1];
+    var items3 = columns[2];
+    var items4 = columns[3];
+    
+    var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
+    this.$el.html(renderedContent);
+    this.$("#search-filter").focus().val(prevQuery);
     return this;
   },
   
@@ -30,7 +44,8 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     "click #options-all": "render",
     "click #options-used": "filter",
     "click .options-price": "priceFilter",
-    "click #options-price-any": "render"
+    "click #options-price-any": "render",
+    "keyup #search-filter": "searchFilter"
   },
   
   filter: function(event) {
@@ -57,6 +72,17 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
     this.filteredRender(filteredCollection);
+  },
+  
+  searchFilter: function(event) {    
+    var searchString = $(event.target).val();
+
+    var filteredArr = this.collection.filter(function(item) {
+      return item.get('title').toLowerCase().indexOf(searchString) != -1;
+    })
+    
+    var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
+    this.searchRender(filteredCollection, searchString);
   },
   
   initialize: function() {
