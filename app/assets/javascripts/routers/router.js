@@ -7,12 +7,14 @@ Cycletree.Router = Backbone.Router.extend({
   
   categoriesIndex: function() {
     debugger
-    var indexView = new Cycletree.CategoriesIndex({collection: Cycletree.Categories})
-    Cycletree.Categories.fetch({
-      success: function() {
-        this._swapView(indexView)
-      }.bind(this)
-    })
+    // this.navigate('/')
+    window.history.back();
+    // var indexView = new Cycletree.CategoriesIndex({collection: Cycletree.Categories})
+    // Cycletree.Categories.fetch({
+    //   success: function() {
+    //     this._swapView(indexView)
+    //   }.bind(this)
+    // })
   },
   
   categoriesShow: function (id) {

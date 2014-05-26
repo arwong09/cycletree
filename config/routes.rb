@@ -1,6 +1,8 @@
 Cycletree::Application.routes.draw do
   root to: 'categories#index'
   
+  get 'bikes', to: 'categories#backbone'
+  
   resources :users, only: [:new, :create, :show, :update, :edit] do
     resources :items, only: [:new, :create, :show]
     resources :reviews, only: [:create, :show]

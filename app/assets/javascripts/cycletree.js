@@ -6,10 +6,7 @@ window.Cycletree = {
   initialize: function() {
     Cycletree.Categories = new Cycletree.Categories();
     new Cycletree.Router();
-    Backbone.history.start();
+    Backbone.history.start({root: 'categories/:id', pushstate: true});
   }
 };
 
-$(document).ready(function(){
-  Cycletree.initialize();
-});

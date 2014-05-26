@@ -14,4 +14,7 @@ class CategoriesController < ApplicationController
     @items = @category.items
     render 'items/index'
   end
+  
+  def backbone
+  end
 end

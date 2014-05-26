@@ -28,7 +28,8 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   events: {
     "click #options-new": "filter",
     "click #options-all": "render",
-    "click #options-used": "filter"
+    "click #options-used": "filter",
+    // "click .options-price": "priceFilter"
   },
   
   filter: function(event) {
@@ -43,6 +44,10 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   
     return this;
   },
+    // 
+  // priceFilter: function(event) {
+  //   var price = $(event.target)
+  // },
   
   initialize: function() {
     this.listenTo(this.collection, 'sync', this.render)
