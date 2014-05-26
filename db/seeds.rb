@@ -8,9 +8,9 @@
 
 categories = Category.create([{ title: 'Road Bike', image: File.new('images/road.jpg', "r") }, 
   { title: 'Cruiser Bike', image: File.new('images/cruiser.jpg', "r")},
-  { title: 'Fixed Gear Bike', image: File.new('images/fixie2.png', "r")},
+  { title: 'Fixed Gear Bike', image: File.new('images/fixed-gear.jpg', "r")},
   { title: 'Mountain Bike', image: File.new('images/mountain.jpg', "r")},
-  { title: 'City Bike', image: File.new('images/orto-bikes.jpg', "r")},
+  { title: 'City Bike', image: File.new('images/city-bike.jpg', "r")},
   { title: 'Vintage Bike', image: File.new('images/vintage.jpg', "r")},
 ])
 
@@ -19,3 +19,15 @@ users = User.create([{ username: 'Andrew', password_digest: '$2a$10$eyNa5tS7yF/e
 
 Born and raised in California, I\'ve had the pleasure of living in almost every geographic region of California. The Bay Area is still my favorite place to live to this day, so I\'m glad to be back.', title: 'CEO at Hackstarter', blurb: 'Weigh 160, bench 250.', image: File.new('images/rhonsby.jpg', 'r')}])
 
+items = Item.create([{ title: 'Mens Hybrid Bike - 22" - MUST SEE', description: "Good condition Marin San Anselmo - roughly 12 years old but rides great, with no real mechanical issues. XL - fits for someone 5'10'' to 6'3''. Great commuter bike for a very fair price.
+
+Road-size wheels with hybrid tires and front suspension. Panier rack installed.
+
+$150 obo. Free delivery available to Santa Cruz, Scotts Valley, or Santa Cruz Mountains. Delivery available outside of this area for small delivery fee.", price: "150", condition: "Used", features: "Road-size wheels, Hybrid tires, front suspension, Panier rack installed", owner_id: '1', image: File.new('images/fixie2.png', 'r')},
+
+{ title: 'Girls Red 20" Bike - 5 speeds - New Like Condition ', description: "Good condition Marin San Anselmo - roughly 12 years old but rides great, with no real mechanical issues. XL - fits for someone 5'10'' to 6'3''. Great commuter bike for a very fair price.
+
+Road-size wheels with hybrid tires and front suspension. Panier rack installed.
+
+$150 obo. Free delivery available to Santa Cruz, Scotts Valley, or Santa Cruz Mountains. Delivery available outside of this area for small delivery fee.", price: "150", condition: "New", features: "Road-size wheels, Hybrid tires, front suspension, Panier rack installed", owner_id: '2', image: File.new('images/bike1.jpeg', 'r')}
+])
