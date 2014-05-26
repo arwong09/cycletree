@@ -1,4 +1,4 @@
-<div class="col-xs-6 col-xs-offset-1">
+<div class="col-xs-5 col-xs-offset-2">
   <h1>Welcome <%= current_user.username %>!</h1>
   
   <div class="panel panel-default">
@@ -49,15 +49,14 @@
   </div>
 </div>
       
-<div class='col-xs-4'>
-  <div class="panel panel-default">
+<div class='col-xs-3'>
+  <div class="panel panel-default" id="profile-photo-preview">
     <div class="panel-heading">
       Your Photo
     </div>
      
     <div class="panel-body">
-      <div class="photo-square">
-        <%= image_tag current_user.image.url(:profile) if current_user.image.url %>
+      <div class="photo-square" style="background-image: url('<%= current_user.image.url %>'); background-repeat: no-repeat; background-position: center">
       </div>
     </div>
   </div>
