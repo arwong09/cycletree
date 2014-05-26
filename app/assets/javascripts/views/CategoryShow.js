@@ -29,7 +29,8 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     "click #options-new": "filter",
     "click #options-all": "render",
     "click #options-used": "filter",
-    // "click .options-price": "priceFilter"
+    "click .options-price": "priceFilter",
+    "click #options-price-any": "render"
   },
   
   filter: function(event) {
@@ -44,10 +45,19 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   
     return this;
   },
-    // 
-  // priceFilter: function(event) {
-  //   var price = $(event.target)
-  // },
+    
+  priceFilter: function(event) {
+    var priceLookup = $(event.target).data('price');
+    var minPrice = { 'price-b': 0, 'price-c': 500, 'price-d': 1000, 'price-e': 2500 }
+    var maxPrice = { 'price-b': 500, 'price-c': 1000, 'price-d': 2500, 'price-e': 1000000 }
+
+    var filteredArr = this.collection.filter(function(item) {
+      return item.get('price') > minPrice[priceLookup] && item.get('price') < maxPrice[priceLookup];
+    })
+    
+    var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
+    this.filteredRender(filteredCollection);
+  },
   
   initialize: function() {
     this.listenTo(this.collection, 'sync', this.render)

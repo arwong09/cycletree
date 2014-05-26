@@ -19,7 +19,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="#<%= category_path(@categories[i]) %>">
+          <a href="/bikes/#<%= category_path(@categories[i]) %>">
             <img src='<%= @categories[i].image.url(:index_small) %>' />
           </div>
           <div class="poster-title">
@@ -30,7 +30,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="#<%= category_path(@categories[i]) %>">
+          <a href="/bikes/#<%= category_path(@categories[i]) %>">
           <img src='<%= @categories[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
@@ -43,7 +43,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="#<%= category_path(@categories[i]) %>">
+          <a href="/bikes/#<%= category_path(@categories[i]) %>">
           <img src='<%= @categories[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
@@ -54,7 +54,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="#<%= category_path(@categories[i]) %>">
+          <a href="/bikes/#<%= category_path(@categories[i]) %>">
           <img src='<%= @categories[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
@@ -79,7 +79,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i = 0 %>
-          <a href="/bikes/<%= item_url(@items[i]) %>">
+          <a href="<%= item_url(@items[i]) %>">
           <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
@@ -92,7 +92,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="/bikes/<%= item_url(@items[i]) %>">
+          <a href="<%= item_url(@items[i]) %>">
           <img src='<%= @items[i].image.url(:index_large) %>' />
         </div>
         <div class="poster-title">
@@ -105,7 +105,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="/bikes/<%= item_url(@items[i]) %>">
+          <a href="<%= item_url(@items[i]) %>">
           <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
