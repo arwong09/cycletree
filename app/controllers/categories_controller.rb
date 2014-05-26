@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    @items = Item.all.shuffle
+
     respond_to do |format|
       format.html { render :index }
       format.json { render 'categories/index' }

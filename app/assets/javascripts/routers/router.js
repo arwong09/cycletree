@@ -1,12 +1,11 @@
 Cycletree.Router = Backbone.Router.extend({
   routes: {
-    '': 'categoriesIndex',
-    'categories/:id': 'categoriesShow',
+    // '': 'categoriesIndex',
+    'categories/:id': 'categoriesShow'
     // 'categories/:category_id/items/:id' : 'itemsShow'
   },
   
   categoriesIndex: function() {
-    debugger
     var indexView = new Cycletree.CategoriesIndex({collection: Cycletree.Categories})
     Cycletree.Categories.fetch({
       success: function() {

@@ -1,1 +1,230 @@
-<div id="initialize-backbone"></div>
+<div class="container">
+  <div class="row" id="cat-index-top-block">
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="poster-outer">
+          <div class="poster">
+          <% i = 0 %>
+            <a href="#<%= category_path(@categories[i]) %>">
+            <img src='<%= @categories[i].image.url(:index_large) %>' />
+          </div>
+          
+          <div class="poster-title">
+            <%= @categories[i].title %>s</a>
+          </div>
+        </div>
+      </div>
+      
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          <% i += 1 %>
+          <a href="#<%= category_path(@categories[i]) %>">
+            <img src='<%= @categories[i].image.url(:index_small) %>' />
+          </div>
+          <div class="poster-title">
+            <%= @categories[i].title %>s</a>
+        </div>
+      </div>
+      
+      <div class="poster-outer">
+        <div class="poster">
+          <% i += 1 %>
+          <a href="#<%= category_path(@categories[i]) %>">
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+            <%= @categories[i].title %>s</a>
+        </div>
+      </div>
+    </div>
+      
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          <% i += 1 %>
+          <a href="#<%= category_path(@categories[i]) %>">
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+            <%= @categories[i].title %>s</a>
+        </div>
+      </div>
+      
+      <div class="poster-outer">
+        <div class="poster">
+          <% i += 1 %>
+          <a href="#<%= category_path(@categories[i]) %>">
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+            <%= @categories[i].title %>s</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- TOP LEFT COLUMN -->
+    
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          <% i += 1 %>
+          <a href="#<%= category_path(@categories[i]) %>">
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+            <%= @categories[i].title %>s</a>
+        </div>
+      </div>
+      <div class="poster-outer">
+        <div class="poster">
+          <% i = 0 %>
+          <a href="<%= item_path(@items[i]) %>">
+          <img src='<%= @items[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+          <%= @items[i].title %></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_large) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#"><%= @categories[i].title %></a>
+        </div>
+      </div>
+    </div>
+      
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#"><%= @categories[i].title %></a>
+        </div>
+      </div>
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#"><%= @categories[i].title %></a>
+        </div>
+      </div>
+    </div>
+  </div><!-- TOP RIGHT COLUMN -->
+  
+  <div class="row" id="cat-index-bottom-block">
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="poster-outer">
+          <div class="poster">
+            
+            <img src='<%= @categories[i].image.url(:index_large) %>' />
+          </div>
+          
+          <div class="poster-title">
+            <a href="#"><%= @categories[i].title %></a>
+          </div>
+        </div>
+      </div>
+      
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#"><%= @categories[i].title %></a>
+        </div>
+      </div>
+      
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#"><%= @categories[i].title %></a>
+        </div>
+      </div>
+    </div>
+  </div><!-- BOTTOM LEFT COLUMN -->
+  
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#"><%= @categories[i].title %></a>
+        </div>
+      </div>
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_small) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#"><%= @categories[i].title %></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_large) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#">Cool Bicycle  </a>
+        </div>
+      </div>
+    </div>
+  </div><!-- BOTTOM RIGHT COLUMN -->
+  
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="poster-outer">
+        <div class="poster">
+          <img src='<%= @categories[i].image.url(:index_med) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#">Cool Bicycle</a>
+        </div>
+      </div>
+      
+      <div class="poster-outer">
+        <div class="poster">
+          
+          <img src='<%= @categories[i].image.url(:index_med) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#">Cool Bicycle</a>
+        </div>
+      </div>
+      
+      <div class="poster-outer">
+        <div class="poster">
+          <img src='<%= @categories[i].image.url(:index_med) %>' />
+        </div>
+        <div class="poster-title">
+          <a href="#">Cool Bicycle</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- BOTTOM THREE COLUMN -->
+</div>
+ 
