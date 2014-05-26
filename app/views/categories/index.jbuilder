@@ -7,4 +7,5 @@ json.array!(@categories) do |json, category|
   json.small_url category.image.url(:small)
   json.index_small category.image.url(:index_small)
   json.index_large category.image.url(:index_large)
+  json.index_med category.image.url(:index_med)
 end
