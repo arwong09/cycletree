@@ -25,8 +25,9 @@ ul {
   padding: 4px;
   background-color: white;
   border-radius: 3px;
-  float: left;
+  z-index: 2;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
+
 }
 
 img {
@@ -126,6 +127,10 @@ img {
   line-height: 12px;
 }
 
+#cat-index-top-block {
+  padding: 0 85px;
+}
+
 .btn-options {
   background-color: #fff;
   color: #0192b5;
@@ -142,4 +147,19 @@ img {
 
 .options-input input:hover {
   color: #0192b5;
+}
+
+.poster-outer {
+  margin: 13px;
+  float: left;  
+}
+
+.poster-title {
+  width: 96%;
+  z-index: -1;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin-left: 2%;
+  position: relative;
 }
