@@ -3,46 +3,48 @@
   
   <div class="panel panel-default">
     <div class="panel-body"> 
+      <div class="col-xs-12">
       <%= form_for [current_user], url: user_url(current_user), 
-        method: :patch, html: { multipart: true, class: 'form-inline' } do |f|%>
+        method: :patch, html: { multipart: true } do |f|%>
         
-        <div class="form-group" id="form-user-full_name">
+        <div class="form-group edit-profile-form" id="form-user-full_name">
           <%= f.label :full_name %>
           <%= f.text_field :full_name, class: 'form-control' %>
         </div>
         
-        <div class="form-group" id="form-user-email">
+        <div class="form-group edit-profile-form" id="form-user-email">
           <%= f.label :email %>
           <%= f.text_field :email, class: 'form-control' %>
         </div>
         
-        <div class="form-group">
-          <%= f.label :blurb %>
+        <div class="form-group edit-profile-form">
+          <%= f.label "Describe yourself in one line!" %>
           <%= f.text_field :blurb, class: 'form-control' %>
         </div>
         
-        <div class="form-group" id="form-user-profile">
-          <%= f.label :profile %>
+        <div class="form-group edit-profile-form" id="form-user-title">
+          <%= f.label "What do you do?" %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group edit-profile-form" id="form-user-profile">
+          <%= f.label "A few facts about you" %>
           <%= f.text_field :profile, class: 'form-control' %>
         </div>
       
-        <div class="form-group" id="form-user-description">
-          <%= f.label :description %>
+        <div class="form-group edit-profile-form" id="form-user-description">
+          <%= f.label "Describe yourself" %>
           <%= f.text_area :description, class: 'form-control', rows: '10' %>
         </div>
-    
-        <div class="form-group" id="form-user-title">
-          <%= f.label :title %>
-          <%= f.text_field :title, class: 'form-control' %>
-        </div>
   
-        <div class="form-group">
+        <div class="form-group edit-profile-form">
           <%= f.file_field :image %>
           
           <%= f.submit "Update Profile", class: 'form-control btn btn-primary'%>
         </div>
   
       <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +52,7 @@
 <div class='col-xs-4'>
   <div class="panel panel-default">
     <div class="panel-heading">
-      Upload a photo
+      Your Photo
     </div>
      
     <div class="panel-body">
@@ -58,6 +60,5 @@
         <%= image_tag current_user.image.url(:profile) if current_user.image.url %>
       </div>
     </div>
-  </div>
   </div>
 </div>
