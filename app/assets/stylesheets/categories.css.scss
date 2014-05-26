@@ -78,11 +78,7 @@ ul {
   float: left;
   margin: 5px;
   margin-bottom: 20px;
-}
-
-.poster-item-title {
-  line-height: 19px;
-  
+  width: 248px;
 }
 
 .poster-item-title a {
@@ -94,8 +90,7 @@ ul {
   color: #666;
   zoom: 1;
   font-size: 12px;
-
-
+  line-height: 19px;
 }
 
 .poster-item-subtitle {
@@ -185,10 +180,10 @@ ul {
   -webkit-transition-property: all;
   -webkit-transition-duration: 0.1s;
   -webkit-transition-timing-function: ease;
-  -webkit-transition-delay: initial
+  -webkit-transition-delay: initial;
 }
 
-.poster img:hover {
+.poster a:hover img{
   background-color: #000;
   opacity: 0.9;
 }

@@ -6,6 +6,7 @@ Cycletree.Router = Backbone.Router.extend({
   },
   
   categoriesIndex: function() {
+    debugger
     var indexView = new Cycletree.CategoriesIndex({collection: Cycletree.Categories})
     Cycletree.Categories.fetch({
       success: function() {
@@ -24,19 +25,6 @@ Cycletree.Router = Backbone.Router.extend({
       }.bind(this)
     })
   },
-  
-  // itemsShow: function(category_id, id) {
- //    var items = new Cycletree.Items([], {category_id: id});
- //    
- //    items.fetch({
- //      success: function() {
- //        
- //        // var itemsShow = new Cycletree.ItemsShow({model: item});
- //        // this._swapView(itemsShow);
- //      }
- //    })
- // 
- //  },
 
   _swapView: function (newView) {
     if (this.currentView) {
