@@ -1,20 +1,23 @@
 Cycletree.Router = Backbone.Router.extend({
   routes: {
     // '': 'categoriesIndex',
+    'categories/:id/items/:id': 'cartModal',
     'categories/:id': 'categoriesShow'
+
     // 'categories/:category_id/items/:id' : 'itemsShow'
   },
   
   categoriesIndex: function() {
-    debugger
-    // this.navigate('/')
-    window.history.back();
     // var indexView = new Cycletree.CategoriesIndex({collection: Cycletree.Categories})
     // Cycletree.Categories.fetch({
     //   success: function() {
     //     this._swapView(indexView)
     //   }.bind(this)
     // })
+  },
+  
+  cartModal: function() {
+    console.log('test');
   },
   
   categoriesShow: function (id) {

@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
   has_many :categories, through: :category_joins, source: :category
   has_many :carts, through: :cart_items, source: :cart
   
-  has_attached_file :image, styles: { show_side: "", show_more: "", profile_listing: "", show: "570x", thumb: "", index_med: "302x250#", index_large: "468x382#", index_small: "216x186#" }, convert_options: { 
+  has_attached_file :image, styles: { cart: "68x68#", show_side: "", show_more: "", profile_listing: "", show: "570x", thumb: "", index_med: "302x250#", index_large: "468x382#", index_small: "216x186#" }, convert_options: { 
     thumb: "-resize 400x800 -gravity Center -shave 80x0",
     show_side: "-resize 800x175 -gravity Center -crop 156x124+0+0",
     show_more: "-resize 800x85 -gravity Center -crop 69x69+0+0",

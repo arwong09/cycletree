@@ -1,3 +1,18 @@
+<script>
+$(function() {
+  $('form').submit(function(event) {
+    event.preventDefault();
+    var valuesToSubmit = $(this).serialize();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: "post",
+      data: valuesToSubmit,
+      dataType: "JSON"
+    })
+  })
+})
+</script>
+
 <div class="container" id="item-show-container">
   <div class="row" id="item-show-header">
 
@@ -127,8 +142,67 @@
             <%= @item.features %>
           </div>
         </div>
+        <!-- Button trigger modal -->
+        <form action="<%= item_cart_items_url(@item) %>" method="post">
+          <input type="hidden" name="authenticity_token" 
+            value="<%= form_authenticity_token %>">
+            <!-- <button > -->
+              <input class="btn" id='btn-add-to-cart' data-toggle="modal"
+              data-target="#user-cart" type="submit" class="close" data-dismiss="modal" 
+              aria-hidden="true" value="Add to Cart">
+            <!-- </button> -->
         
-        <div class='btn' id='btn-add-to-cart'>Add to Cart</div>
+        </form>
+       
+
+        <!-- Modal -->
+        <div class="modal fade" id="user-cart" tabindex="-1" role="dialog" 
+          aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" 
+                  aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">
+                  Your Shopping Cart
+                </h4>
+              </div>
+              
+              <div class="cart-body">
+                <div class="cart-item row">
+                  <div class="col-xs-4">
+                    <%= image_tag @item.image.url(:cart) %>
+                  </div>
+                  <div class="col-xs-8">
+                    <%= @item.title %>
+                  </div>
+                </div>
+
+                <% @cart_items.each do |ci| %>
+                  <% next if ci == @item %>
+                <div class="cart-item row">
+                  <div class="col-xs-4">
+                    <%= link_to image_tag(ci.image.url(:cart)), item_url(ci) %>
+                  </div>
+                  <div class="col-xs-8">
+                    <%= ci.title %>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" 
+                  data-dismiss="modal">
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
       <div class="panel" id="panel-item-show-more">

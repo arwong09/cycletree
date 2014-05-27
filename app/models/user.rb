@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :received_reviews, class_name: :Review, foreign_key: :seller_id
   has_many :authored_reviews, class_name: :Review, foreign_key: :author_id
   has_one :cart, class_name: :Cart, foreign_key: :owner_id
+  has_many :cart_items, through: :cart, source: :items
   
   has_attached_file :image, styles: { review_thumb: "45x45#", item_thumb: "77x77#", comment_thumb: "68x68#", profile: "230x230#" }
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
