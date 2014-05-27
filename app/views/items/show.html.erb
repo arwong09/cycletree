@@ -1,6 +1,6 @@
 <script>
 $(function() {
-  $('form').submit(function(event) {
+  $('#cart-form').submit(function(event) {
     event.preventDefault();
     var valuesToSubmit = $(this).serialize();
     $.ajax({
@@ -9,6 +9,21 @@ $(function() {
       data: valuesToSubmit,
       dataType: "JSON"
     })
+  });
+  
+  $('.form-cart-remove').submit(function(event) {
+    event.preventDefault();
+    var valuesToSubmit = $(this).serialize();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: "delete",
+      data: valuesToSubmit,
+      dataType: "JSON"
+    });
+    debugger
+    var id = $(event.target).data('id')
+    $('#cart-item-' + id).html("");
+    return false;
   })
 })
 </script>
@@ -143,7 +158,7 @@ $(function() {
           </div>
         </div>
         <!-- Button trigger modal -->
-        <form action="<%= item_cart_items_url(@item) %>" method="post">
+        <form action="<%= item_cart_items_url(@item) %>" id="cart-form" method="post">
           <input type="hidden" name="authenticity_token" 
             value="<%= form_authenticity_token %>">
             <!-- <button > -->
@@ -164,28 +179,38 @@ $(function() {
                 <button type="button" class="close" data-dismiss="modal" 
                   aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">
-                  Your Shopping Cart
+                  Items in Your Cart
                 </h4>
               </div>
               
               <div class="cart-body">
                 <div class="cart-item row">
-                  <div class="col-xs-4">
+                  <div class="col-xs-3">
                     <%= image_tag @item.image.url(:cart) %>
                   </div>
-                  <div class="col-xs-8">
-                    <%= @item.title %>
+                  <div class="col-xs-9">
+                    <%= link_to @item.title, item_url(@item) %>
+                    <%= @item.description %>
                   </div>
                 </div>
 
                 <% @cart_items.each do |ci| %>
                   <% next if ci == @item %>
-                <div class="cart-item row">
-                  <div class="col-xs-4">
+                <div class="cart-item row" id="cart-item-<%= ci.id %>">
+                  <div class="col-xs-3">
                     <%= link_to image_tag(ci.image.url(:cart)), item_url(ci) %>
                   </div>
-                  <div class="col-xs-8">
-                    <%= ci.title %>
+                  <div class="col-xs-9">
+                    <%= link_to ci.title, item_url(ci) %>
+                    <%= ci.description %>
+                    <form action="<%= cart_item_url(ci.cart_items.find_by(cart_id: current_user.cart.id)) %>" method="post" data-id="<%= ci.id %>" class="form-cart-remove">
+                      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                      <input type="hidden" name="_method" value="DELETE">
+                      <input type="submit" name="some_name" value="remove" id="some_name" class="cart-remove-btn">
+                    
+                      
+                    </form>
+       
                   </div>
                 </div>
                 <% end %>

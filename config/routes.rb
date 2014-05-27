@@ -14,6 +14,8 @@ Cycletree::Application.routes.draw do
     resources :cart_items, only: [:new, :create]
   end
   
+  resources :cart_items, only: [:destroy]
+  
   resource :session, only: [:new, :create, :destroy]
   
   resources :categories, only: [:index, :show] do

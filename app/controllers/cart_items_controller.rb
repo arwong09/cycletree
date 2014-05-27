@@ -7,4 +7,9 @@ class CartItemsController < ApplicationController
     new_item = current_user.cart.cart_items.new({item_id: params[:item_id]})
     new_item.save
   end
+  
+  def destroy
+    item = CartItem.find(params[:id])
+    item.destroy
+  end
 end
