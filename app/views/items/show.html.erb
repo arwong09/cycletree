@@ -22,6 +22,18 @@ $(function() {
     });
     var id = $(event.target).data('id')
     $('#cart-item-' + id).html("");
+  });
+  
+  $('#form-submit-favorite').submit(function(event) {
+    event.preventDefault();
+    var valuesToSubmit = $(this).serialize();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: "POST",
+      data: valuesToSubmit,
+      dataType: "JSON"
+    });
+    $('.glyphicon-heart').css({color: "#CA7661"});
   })
 })
 </script>
@@ -72,14 +84,15 @@ $(function() {
         <div class="col-xs-7">
           <div class="jumbotron" id="jumbotron-item-show">
             <div class="col-xs-3">
-              <form action="show_submit" method="get" accept-charset="utf-8">
+              <form action="<%= item_favorites_url(@item) %>" method="POST" id="form-submit-favorite">
                 
-              
-                <p><input type="submit" value="Continue &rarr;"></p>
+              <button type="submit" id="submit-favorite" class='btn btn-secondary item-show-favorite'>
+                <span class='glyphicon glyphicon-heart' 
+                <% if !current_user.favorited_items.where( id: @item.id ).empty? %>
+                style='color: #CA7661'
+                <% end %>></span> Favorite
+              </button>
               </form>
-              <div class='btn btn-secondary item-show-favorite'>
-                <span class='glyphicon glyphicon-heart'></span> Favorite
-              </div>
             </div>
             
             <div class="col-xs-9">
