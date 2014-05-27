@@ -41,19 +41,25 @@
       
       <p><%= @user.description %></p>
     </div>
-    
+    <di class="container">
     <div class="row">
       <h3>Reviews <span>(<%= @num_reviews %>)</span></h3>
       <% @reviews.each do |review| %>
         <div class="row user-show-review">
           <div class="col-xs-1 user-show-review-pic">
             <%= link_to image_tag(review.author.image.url(:comment_thumb)), user_url(review.author) %>
+            <div class="user-show-review-author"><%= link_to review.author.username, user_url(review.author) %></div>
           </div>
+          
           <div class="col-xs-11 user-show-review-body">
             <%= review.body %>
+            <div class="review-date">
+              <%= review.created_at.strftime("%B %e") %>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
+  </div>
   </div>
 </div>
