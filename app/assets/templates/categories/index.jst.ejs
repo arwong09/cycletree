@@ -6,11 +6,11 @@
           <div class="poster">
           <% var i = 1; %>
             <a href="#">
-            <img src='<%= categories.get(i).get('index_large') %>' />
+            <img src='<%= categories.escape(i).escape('index_large') %>' />
           </div>
           
           <div class="poster-title">
-            <%= categories.get(i).get('title') %>s</a>
+            <%= categories.escape(i).escape('title') %>s</a>
           </div>
         </div>
       </div>
@@ -20,20 +20,20 @@
         <div class="poster">
           <% i++ %>
           <a href="#">
-            <img src='<%= categories.get(i).get('index_small') %>' />
+            <img src='<%= categories.escape(i).escape('index_small') %>' />
           </div>
           <div class="poster-title">
-            <%= categories.get(i).get('title') %>s</a>
+            <%= categories.escape(i).escape('title') %>s</a>
         </div>
       </div>
       
       <div class="poster-outer">
         <div class="poster">
           <% i++ %>
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %>s</a>
+          <a href="#"><%= categories.escape(i).escape('title') %>s</a>
         </div>
       </div>
     </div>
@@ -42,20 +42,20 @@
       <div class="poster-outer">
         <div class="poster">
           <% i++ %>
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %>s</a>
+          <a href="#"><%= categories.escape(i).escape('title') %>s</a>
         </div>
       </div>
       
       <div class="poster-outer">
         <div class="poster">
           <% i++ %>
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %>s</a>
+          <a href="#"><%= categories.escape(i).escape('title') %>s</a>
         </div>
       </div>
     </div>
@@ -66,19 +66,19 @@
       <div class="poster-outer">
         <div class="poster">
           <% i++ %>
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %>s</a>
+          <a href="#"><%= categories.escape(i).escape('title') %>s</a>
         </div>
       </div>
       <div class="poster-outer">
         <div class="poster">
           <% var i = 1 %>
-          <img src='<%= items.get(i).get('index_small') %>' />
+          <img src='<%= items.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= items.get(i).get('title') %></a>
+          <a href="#"><%= items.escape(i).escape('title') %></a>
         </div>
       </div>
     </div>
@@ -87,10 +87,10 @@
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(1).get('index_large') %>' />
+          <img src='<%= categories.escape(1).escape('index_large') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %></a>
+          <a href="#"><%= categories.escape(i).escape('title') %></a>
         </div>
       </div>
     </div>
@@ -99,19 +99,19 @@
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %></a>
+          <a href="#"><%= categories.escape(i).escape('title') %></a>
         </div>
       </div>
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %></a>
+          <a href="#"><%= categories.escape(i).escape('title') %></a>
         </div>
       </div>
     </div>
@@ -123,11 +123,11 @@
         <div class="poster-outer">
           <div class="poster">
             
-            <img src='<%= categories.get(i).get('index_large') %>' />
+            <img src='<%= categories.escape(i).escape('index_large') %>' />
           </div>
           
           <div class="poster-title">
-            <a href="#"><%= categories.get(i).get('title') %></a>
+            <a href="#"><%= categories.escape(i).escape('title') %></a>
           </div>
         </div>
       </div>
@@ -136,20 +136,20 @@
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %></a>
+          <a href="#"><%= categories.escape(i).escape('title') %></a>
         </div>
       </div>
       
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %></a>
+          <a href="#"><%= categories.escape(i).escape('title') %></a>
         </div>
       </div>
     </div>
@@ -160,19 +160,19 @@
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %></a>
+          <a href="#"><%= categories.escape(i).escape('title') %></a>
         </div>
       </div>
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_small') %>' />
+          <img src='<%= categories.escape(i).escape('index_small') %>' />
         </div>
         <div class="poster-title">
-          <a href="#"><%= categories.get(i).get('title') %></a>
+          <a href="#"><%= categories.escape(i).escape('title') %></a>
         </div>
       </div>
     </div>
@@ -181,7 +181,7 @@
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_large') %>' />
+          <img src='<%= categories.escape(i).escape('index_large') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle  </a>
@@ -195,7 +195,7 @@
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_med') %>' />
+          <img src='<%= categories.escape(i).escape('index_med') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle</a>
@@ -205,7 +205,7 @@
       <div class="poster-outer">
         <div class="poster">
           
-          <img src='<%= categories.get(i).get('index_med') %>' />
+          <img src='<%= categories.escape(i).escape('index_med') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle</a>
@@ -214,7 +214,7 @@
       
       <div class="poster-outer">
         <div class="poster">
-          <img src='<%= categories.get(i).get('index_med') %>' />
+          <img src='<%= categories.escape(i).escape('index_med') %>' />
         </div>
         <div class="poster-title">
           <a href="#">Cool Bicycle</a>

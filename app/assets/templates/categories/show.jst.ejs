@@ -47,22 +47,22 @@
       <% _(10).times(function(){items1.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items1.category_id %>/items/
-            <%= item.get('id') %>">
-            <img src='<%= item.get('thumb_url') %>' />
+            <%= item.escape('id') %>">
+            <img src='<%= item.escape('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
             <a href="/categories/<%= items1.category_id %>/items/
-              <%= item.get('id') %>">
-              <%= item.get('title') %>
+              <%= item.escape('id') %>">
+              <%= item.escape('title') %>
             </a>
           </div>
           <div class="poster-item-subtitle">
             <span class="poster-item-owner">
-              <a href="/users/<%= item.get('owner_id') %>">
-                <%= item.get('owner') %>
+              <a href="/users/<%= item.escape('owner_id') %>">
+                <%= item.escape('owner') %>
               </a>
             </span>
-            <span class="poster-item-price">$<%= item.get('price') %></span>
+            <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
       <% })}) %>
@@ -72,22 +72,22 @@
       <% _(10).times(function(){items2.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items2.category_id %>/items/
-            <%= item.get('id') %>">
-            <img src='<%= item.get('thumb_url') %>' />
+            <%= item.escape('id') %>">
+            <img src='<%= item.escape('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
             <a href="/categories/<%= items2.category_id %>/items/
-              <%= item.get('id') %>">
-              <%= item.get('title') %>
+              <%= item.escape('id') %>">
+              <%= item.escape('title') %>
             </a>
           </div>
           <div class="poster-item-subtitle">
             <span class="poster-item-owner">
-              <a href="/users/<%= item.get('owner_id') %>">
-                <%= item.get('owner') %>
+              <a href="/users/<%= item.escape('owner_id') %>">
+                <%= item.escape('owner') %>
               </a>
             </span>
-            <span class="poster-item-price">$<%= item.get('price') %></span>
+            <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
         <% })}) %>
@@ -97,22 +97,22 @@
       <% _(10).times(function(){items3.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items3.category_id %>/items/
-            <%= item.get('id') %>">
-            <img src='<%= item.get('thumb_url') %>' />
+            <%= item.escape('id') %>">
+            <img src='<%= item.escape('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
             <a href="/categories/<%= items3.category_id %>/items/
-              <%= item.get('id') %>">
-              <%= item.get('title') %>
+              <%= item.escape('id') %>">
+              <%= item.escape('title') %>
             </a>
           </div>
           <div class="poster-item-subtitle">
             <span class="poster-item-owner">
-              <a href="/users/<%= item.get('owner_id') %>">
-                <%= item.get('owner') %>
+              <a href="/users/<%= item.escape('owner_id') %>">
+                <%= item.escape('owner') %>
               </a>
             </span>
-            <span class="poster-item-price">$<%= item.get('price') %></span>
+            <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
       <% })}) %>
@@ -122,22 +122,22 @@
       <% _(10).times(function(){items4.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items4.category_id %>/items/
-            <%= item.get('id') %>">
-            <img src='<%= item.get('thumb_url') %>' />
+            <%= item.escape('id') %>">
+            <img src='<%= item.escape('thumb_url') %>' />
           </a>
           <div class="poster-item-title">
             <a href="/categories/<%= items4.category_id %>/items/
-              <%= item.get('id') %>">
-              <%= item.get('title') %>
+              <%= item.escape('id') %>">
+              <%= item.escape('title') %>
             </a>
           </div>
           <div class="poster-item-subtitle">
             <span class="poster-item-owner">
-              <a href="/users/<%= item.get('owner_id') %>">
-                <%= item.get('owner') %>
+              <a href="/users/<%= item.escape('owner_id') %>">
+                <%= item.escape('owner') %>
               </a>
             </span>
-            <span class="poster-item-price">$<%= item.get('price') %></span>
+            <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
       <% })}) %>
