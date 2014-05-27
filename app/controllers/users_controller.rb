@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    cart = Cart.new({owner_id: @user.id})
+    @user.cart = cart
     
     if @user.save
       login!(@user)
@@ -50,6 +52,6 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:username, :password, :email, :full_name, :profile, :description, :title, :blurb, :image)
+    params.require(:user).permit(:username, :password, :email, :full_name, :profile, :description, :title, :blurb, :image, :cart)
   end
 end

@@ -1,4 +1,6 @@
 Cycletree::Application.routes.draw do
+  get "cart_items/new"
+  get "cart_items/create"
   root to: 'categories#index'
   
   get 'bikes', to: 'categories#backbone'
@@ -8,7 +10,10 @@ Cycletree::Application.routes.draw do
     resources :reviews, only: [:create, :show]
   end
   
-  resources :items, only: [:show]
+  resources :items, only: [:show] do
+    resources :cart_items, only: [:new]
+  end
+  
   resource :session, only: [:new, :create, :destroy]
   
   resources :categories, only: [:index, :show] do
