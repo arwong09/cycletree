@@ -22,7 +22,6 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     
     var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
     this.$el.html(renderedContent);
-    this.$("#search-filter").val("hello");
     return this;
   },
   
@@ -78,7 +77,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     var searchString = $(event.target).val();
 
     var filteredArr = this.collection.filter(function(item) {
-      return item.get('title').toLowerCase().indexOf(searchString) != -1;
+      return item.get('title').toLowerCase().indexOf(searchString) != -1 || item.get('owner').toLowerCase().indexOf(searchString) != -1;
     })
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});

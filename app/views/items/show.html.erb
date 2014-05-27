@@ -1,24 +1,24 @@
 <div class="container" id="item-show-container">
-<div class="row" id="item-show-header">
+  <div class="row" id="item-show-header">
 
-  <div class="col-xs-12">
-    <div id="item-show-owner-pic">
-      <%= image_tag @item.owner.image.url(:item_thumb) %>
-    </div>
-    
-    <div id="item-show-owner" class="pull-left">
-      <h3>
-        <a href='<%= user_url(@item.owner) %>'><%= @item.owner.username%></a>
-      </h3>
-      
-      <div class="pull-left">
-        <button class="btn btn-secondary btn-sm  item-show-review" data-toggle="modal"
-         data-target="#myModal">
-          <span class="glyphicon glyphicon-pencil"></span> Leave a Review
-        </button>
-        <%= render partial: "review", locals: {owner: @item.owner} %>
+    <div class="col-xs-12">
+      <div id="item-show-owner-pic">
+        <%= image_tag @item.owner.image.url(:item_thumb) %>
       </div>
-    </div>
+    
+      <div id="item-show-owner" class="pull-left">
+        <h3>
+          <a href='<%= user_url(@item.owner) %>'><%= @item.owner.username%></a>
+        </h3>
+      
+        <div class="pull-left">
+          <button class="btn btn-secondary btn-sm  item-show-review" 
+            data-toggle="modal" data-target="#myModal">
+            <span class="glyphicon glyphicon-pencil"></span> Leave a Review
+          </button>
+          <%= render partial: "review", locals: {owner: @item.owner} %>
+        </div>
+      </div>
     
     <div id="item-show-listings">
       <ul>
@@ -34,24 +34,25 @@
         </div>
       </li>
     </div>
-  </div>
+  </div><!-- HEADER ROW-->
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div class="col-xs-7">
-        <div class="jumbotron" id="jumbotron-item-show">
-          <div class="col-xs-3">
-            <div class='btn btn-secondary item-show-favorite'>
-              <span class='glyphicon glyphicon-heart'></span> Favorite
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-xs-7">
+          <div class="jumbotron" id="jumbotron-item-show">
+            <div class="col-xs-3">
+              <div class='btn btn-secondary item-show-favorite'>
+                <span class='glyphicon glyphicon-heart'></span> Favorite
+              </div>
             </div>
-          </div>
-          <div class="col-xs-9">
-            <h4>Like this item?</h4>
-            Add it to your favorites to revisit it later.
-          </div>
+            
+            <div class="col-xs-9">
+              <h4>Like this item?</h4>
+              Add it to your favorites to revisit it later.
+            </div>
           <div class='row'></div>
         </div>
         
@@ -62,12 +63,14 @@
             <a href="#tab-details" data-toggle="tab">Item Details</a>
           </li>
           <li>
-            <a href="#tab-reviews" data-toggle="tab">Reviews</a>
+            <a href="#tab-reviews" data-toggle="tab">
+              Reviews (<%= @item.owner.received_reviews.length %>)
+            </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#tab-shipping" data-toggle="tab">Shipping Details</a>
-          </li>
-        </ul>
+          </li> -->
+        </ul><!-- REVIEW TABS -->
         
         <div class="tab-content">
           <div class="tab-pane pane-item-show active" id='tab-details'>
@@ -76,13 +79,31 @@
             </p>
           </div>
           <div class="tab-pane pane-item-show" id='tab-reviews'>
-           reviews
+            <% if @reviews.length == 0 %>
+              <%= @item.owner.username %> doesn't have any reviews yet...
+            <% else %>
+              <% @reviews.each do |review| %>
+                <div class="item-show-review-pane">
+                  <div class="col-xs-3 item-show-review-pic">
+                   <div class="row">
+                     <%= link_to image_tag(
+                       review.author.image.url(:review_thumb), 
+                       class: "img-circle") %>
+                     <br><br>Reviewed by<br>
+                     <%= link_to review.author.username,
+                      user_url(review.author)%>
+                    </div>
+                   </div>
+                   
+                   <div class="col-xs-9 item-show-review-body">
+                     <%= review.body %>
+                   </div>
+                 </div>
+              <% end %>
+            <% end %>
           </div>
-          <div class="tab-pane pane-item-show" id='tab-shipping'>
-            shipping info
-          </div>
-        </div>
-    </div>
+        </div><!-- REVIEW TAB PANES -->
+      </div>
     
     <div class="col-xs-5"><!-- BEGIN RIGHT PANE -->
       <div class="panel" id="panel-item-show-cart">
