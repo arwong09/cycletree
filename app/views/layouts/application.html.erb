@@ -10,7 +10,7 @@
   <body>
     <div id="nav-outer-container">
       <div id="nav-row" class="container">
-        <div class="col-xs-12 row">
+        <div class="col-xs-12">
           <ul>
             <li id="cycletree-li" class="nav-li">cycletree</li>
             <li class="nav-li">Register</li>
@@ -21,16 +21,16 @@
                   <input type="text" class="form-control" id="nav-search" 
                     placeholder="Search for bikes">
                 </div>
-                <button type="submit" class="btn btn-default">Search</button>
+                <button id="nav-search-btn" type="submit" class="btn btn-default">Search</button>
               </form>
             </li>
-            <li class="nav-li">
-              Cart <span class="glyphicon glyphicon-shopping-cart"></span>
+            <li class="nav-li" id="nav-li-cart">
+              Cart&nbsp; <span class="glyphicon glyphicon-shopping-cart"></span>
             </li>
           </ul>
         </div>
-        <div clas="row">
-        <div id="nav-row-2" class="row col-xs-5">
+        <!-- <div class="row"> -->
+        <div id="nav-row-2" class="col-xs-5">
             <h1>Shop Bikes by Category</h1>
         </div>
         <div class="col-xs-2 col-xs-offset-1">
@@ -50,7 +50,7 @@
             <a href="#"><li>Vintage</li></a>
             <a href="#"><li>Mountain</li></a>
           </ul>
-        </div>
+        <!-- </div> -->
         </div>
       </div>
       </div>
