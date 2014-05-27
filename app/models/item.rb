@@ -4,6 +4,8 @@ class Item < ActiveRecord::Base
   has_many :categories, through: :category_joins, source: :category
   has_many :cart_items
   has_many :carts, through: :cart_items, source: :cart
+  has_many :favorites
+  has_many :favoriting_users, through: :favorites, source: :user
   
   has_attached_file :image, styles: { cart: "68x68#", show_side: "", show_more: "", profile_listing: "", show: "570x", thumb: "", index_med: "302x250#", index_large: "468x382#", index_small: "216x186#" }, convert_options: { 
     thumb: "-resize 400x800 -gravity Center -shave 80x0",

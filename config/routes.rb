@@ -1,4 +1,5 @@
 Cycletree::Application.routes.draw do
+  get "favorites/create"
   get "cart_items/new"
   get "cart_items/create"
   root to: 'categories#index'
@@ -12,6 +13,7 @@ Cycletree::Application.routes.draw do
   
   resources :items, only: [:show] do
     resources :cart_items, only: [:new, :create]
+    resources :favorites, only: [:create]
   end
   
   resources :cart_items, only: [:destroy]
