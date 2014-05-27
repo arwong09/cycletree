@@ -107,5 +107,41 @@ body {
   line-height: 15px;
 }
 
+#nav-row-2 h1 {
+  font-family: "Georgia";
+  font-weight: bold;
+  font-size: 28px;
+  color: #555;
+}
+
+#nav-row-2 {
+  margin-top: 10px;
+}
+
+.nav-cat-ul {
+  float: left;
+  margin: 35px 0 0 0;
+}
+
+.nav-cat-ul li {
+  border-radius: 3px;
+  width: 140px;
+  padding: 4px;
+  line-height: 12px;
+  margin-right: 0;
+}
+
+.nav-cat-ul a {
+  color: #0192b5;
+  -webkit-transition: all .07s ease;
+
+}
+
+.nav-cat-ul a:hover li{
+  background-color: #cce9f0;
+  text-decoration: none;
+}
+
+
 
 
