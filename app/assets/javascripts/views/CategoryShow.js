@@ -12,9 +12,11 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     this.$el.html(renderedContent);
     var query = window.location.search.substring(1);
     var keyword = query.split('=')[1];
-    keyword = keyword.replace(/\+/g, " ");
-    $('#search-filter').val(keyword);
-    this.searchFilter(null, keyword);
+    if (keyword) {
+      keyword = keyword.replace(/\+/g, " ");
+      $('#search-filter').val(keyword);
+      this.searchFilter(null, keyword);
+    }
     return this;
   },
   
@@ -86,9 +88,11 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   searchFilter: function(event, keyword) {
     if (keyword) {
       var inputString = keyword;
-    } else { var inputString = $(event.target).val();}
+    } else { var inputString = $(event.target).val(); }
     
-    searchString = inputString.replace(/bikes/g, "").replace(/bike/g, "");
+    // if (inputString) {
+      searchString = inputString.replace(/bikes/g, "").replace(/bike/g, "");
+    // }
     
 
     var filteredArr = this.collection.filter(function(item) {
