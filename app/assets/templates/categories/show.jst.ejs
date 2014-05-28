@@ -1,11 +1,7 @@
 <div class="container" id="container-category-show">
-  <div clas="row">
+  <div class="row">
     <div class="col-xs-12">
-      <div class="jumbotron" id="jumbotron-cat-show">
-        <h1>Shop Fixed Gear Bicycles</h1>
-      </div>
-      
-      <div class="row">
+      <div class="row" id="filters-row">
         <div class="btn-group pull-left">
           <button class="btn btn-options active btn-xs" id="options-all">
             All Cycles
@@ -21,9 +17,9 @@
         </div>
     
         <div class="btn-group pull-left">
-          <button class="btn btn-default btn-xs dropdown-toggle" 
+          <button id="price-filter" class="btn btn-default btn-xs dropdown-toggle" 
             type="button" data-toggle="dropdown">
-            Price<span class="caret"></span>
+            Price <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
             <li><a href="#" id="options-price-any">Any price</a></li>
@@ -34,9 +30,12 @@
           </ul>
         </div><!-- PRICE FILTER -->
         
-        <div class="input-group input-group-sm">
-          <span class="input-group-addon glyphicon glyphicon-search"></span>
-          <input id="search-filter" type="text" class="form-control" placeholder="search">
+        <div class="input-group input-group-sm" id="search-filter-container">
+          <span id="search-filter-glyph" class="input-group-addon">
+            <span class="glyphicon glyphicon-search"></span>
+          </span>
+          <input id="search-filter" type="text" class="form-control" 
+            placeholder="search">
         </div>
       </div><!-- FILTERS ROW -->
     </div>

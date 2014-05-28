@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #container-category-show {
-  width: 1088px;
+  width: 1015px;
+  padding-left: 0;
 }
 
 li {
@@ -78,7 +79,7 @@ ul {
   float: left;
   margin: 5px;
   margin-bottom: 20px;
-  width: 250px;
+  width: 240px;
 }
 
 .poster-item-title a {
@@ -188,4 +189,26 @@ ul {
   background-color: #000;
   opacity: 0.9;
 }
+
+#filters-row {
+  width: 1015px;
+  margin-left: 10px;
+}
+
+#price-filter {
+  border: 1px solid #ddd;
+  line-height: 24px;
+  margin-right: 10px;
+  width: 50px;
+  color: #666;
+  margin-left: 5px;
+}
+
+#search-filter-container {
+  margin-top: -1px;
+  width: 250px;
+  float: right;
+  margin-right: 15px;
+}
+
 
