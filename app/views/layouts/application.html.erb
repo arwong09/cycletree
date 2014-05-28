@@ -20,7 +20,9 @@
 
           <ul>
             <a href="/"><li id="cycletree-li" class="nav-li">cycletree</li></a>
-            <a href="/users/new"><li class="nav-li">Register</li></a>
+            <a href="#" data-toggle="modal" data-target="#register-modal">
+              <li  class="nav-li">Register</li></a>
+            <%= render partial: "sessions/register_modal" %>
             <a href="#" data-toggle="modal" data-target="#sign-in-modal">
               <li  class="nav-li">Sign In</li></a>
             <%= render partial: "sessions/sign_in_modal" %>
