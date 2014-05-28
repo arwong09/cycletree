@@ -70,7 +70,7 @@ $(function() {
       <li class="poster-more-item">
         <div>
         <div class="item-show-more-count">
-          <a href="#">
+          <a href="<%= user_url(@item.owner) %>">
           <span id="item-show-more-num"><%= @num_items %></span>
           <span id="item-show-more-word">cycles</span>
         </a>
@@ -193,7 +193,16 @@ $(function() {
           </div>
           <div class="panel-item-show-features">
             <h4>Overview</h4>
-            <%= @item.features %>
+            <ul id="item-features">
+              <% features = @item.features.split("\n") %>
+              <% features.each do |f| %>
+              <li><%= @item.features %></li>
+              <% end %>
+              <li>Feedback: <a href="<%= user_url(@item.owner) %>">
+                <%= @item.owner.received_reviews.length %> reviews</a>
+              </li>
+              <li>Location: San Francisco</li>
+            </ul>
           </div>
         </div>
         <!-- Button trigger modal -->

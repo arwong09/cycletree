@@ -15,16 +15,35 @@
   font-weight: bold;
   text-shadow: 0 1px 0 white;
   color: #333;
+  margin-bottom: 10px;
+}
+
+.panel-body-item-show-cart h3 {
+  font-family: "Georgia";
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 #submit-favorite {
-  margin-top: 11px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.item-show-condition h5 {
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 #jumbotron-item-show h2 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
   margin-left: 30px;
+  font-weight: bold;
 }
 
 #jumbotron-item-show h4 {
@@ -80,7 +99,7 @@
 }
 
 .nav-tabs-item-show {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 #tab-item-show-first {
@@ -203,8 +222,11 @@
 
 .item-show-price {
   float: left;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
+  font-family: "Arial", "Helvetica", sans-serif;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .item-show-condition {
@@ -313,4 +335,29 @@
   color: #ccc;
   text-shadow: 0 -1px 0 #888;
   margin-right: 2px;
+}
+
+.item-show-more-item a:hover {
+  background-color: #000;
+  opacity: 0.9;
+  -webkit-transition: all 0.1s;
+}
+
+.panel-item-show-features h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#item-features {
+  padding-left: 20px;
+}
+
+#item-features li {
+  font-size: 14px;
+  color: #666;
+  padding-left: 1px;
+  display: list-item;
+  list-style: disc outside none;
+  line-height: 20px;
 }
