@@ -17,6 +17,13 @@ Cycletree.CategoriesShow = Backbone.View.extend({
       $('#search-filter').val(keyword);
       this.searchFilter(null, keyword);
     }
+    if (this.collection) {
+      if (this.collection.category_id === 0) {
+        $('#nav-title').html('<h1>Shop All Bikes</h1>');
+      } else {
+        $('#nav-title').html('<h1>Shop ' + this.collection.first().get('category') + 's</h1>');
+      }
+    }
     return this;
   },
   
