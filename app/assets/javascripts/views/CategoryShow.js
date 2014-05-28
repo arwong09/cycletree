@@ -85,10 +85,10 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   
   searchFilter: function(event, keyword) {
     if (keyword) {
-      var searchString = keyword;
-    } else { var searchString = $(event.target).val();}
+      var inputString = keyword;
+    } else { var inputString = $(event.target).val();}
     
-    searchString = searchString.replace(/bikes/g, "").replace(/bike/g, "");
+    searchString = inputString.replace(/bikes/g, "").replace(/bike/g, "");
     
 
     var filteredArr = this.collection.filter(function(item) {
@@ -96,7 +96,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     })
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
-    this.searchRender(filteredCollection, searchString);
+    this.searchRender(filteredCollection, inputString);
   },
   
   initialize: function() {
