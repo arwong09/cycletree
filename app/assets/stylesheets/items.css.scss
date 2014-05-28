@@ -75,6 +75,7 @@
   padding: 3px;
   border-radius: 2px;
 /*  border: 1px solid #eee;*/
+  background-color: #fff;
   box-shadow: 0 0 1px rgba(0,0,0,0.3);
   margin: 0 10px;
   float: left;
@@ -166,15 +167,14 @@
 }
 
 .item-show-review {
-  margin-top: 10px;
-  color: #7d7773;
+  margin-top: 5px;
+  color: #756e69;
   text-shadow: 0 1px 0 rgba(255,255,255,0.80);
   border-color: #dddad6 #D8D5D2 #cdc9c6;
   background: #f2f3f3;
   background: -webkit-linear-gradient(top,#fff 0,#fdfdfc 4%,#f3f3f2 11%,#f3f3f2 95%,#e9e9e8 100%);
-  padding: 2px 8px;
   font-size: 13px;
-  font-weight: bold;
+  height: 30px;
 }
 
 .item-show-price {
@@ -212,6 +212,8 @@
 
 #item-show-owner h3 {
   margin: 5px 0;
+  font-family: "Georgia";
+  font-weight: bold;
 }
 
 #item-show-owner a {
@@ -219,7 +221,7 @@
 }
 
 #item-show-owner-pic {
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 #item-show-header {
@@ -281,4 +283,10 @@
 .cart-item img {
   border-radius: 2px;
   border: 1px solid #888;
+}
+
+.glyphicon-star {
+  color: #ccc;
+  text-shadow: 0 -1px 0 #888;
+  margin-right: 2px;
 }

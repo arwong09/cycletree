@@ -54,7 +54,7 @@ $(function() {
         <div class="pull-left">
           <button class="btn btn-secondary btn-sm  item-show-review" 
             data-toggle="modal" data-target="#myModal">
-            <span class="glyphicon glyphicon-pencil"></span> Leave a Review
+            <span class="glyphicon glyphicon-star"></span> Leave a Review
           </button>
           <%= render partial: "review", locals: {owner: @item.owner} %>
         </div>
@@ -87,7 +87,7 @@ $(function() {
               <form action="<%= item_favorites_url(@item) %>" method="POST" id="form-submit-favorite">
                 
               <button type="submit" id="submit-favorite" class='btn btn-secondary item-show-favorite'>
-                <span class='glyphicon glyphicon-heart'
+                <span class='glyphicon glyphicon-heart glyphicon-sm'
                 <% if current_user %>
                 <% if !current_user.favorited_items.where( id: @item.id ).empty? %>
                 style='color: #CA7661'

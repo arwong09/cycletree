@@ -3,9 +3,9 @@ Cycletree.Router = Backbone.Router.extend({
     // '': 'categoriesIndex',
     'categories/:id/items/:id': 'cartModal',
     'categories/all': 'categoriesAll',
-    'categories/:id': 'categoriesShow'
+    'categories/:id': 'categoriesShow',
 
-    // 'categories/:category_id/items/:id' : 'itemsShow'
+    // 'items/:id' : 'itemsShow'
   },
   
   categoriesIndex: function() {
