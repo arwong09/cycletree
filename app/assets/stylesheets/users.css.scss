@@ -4,7 +4,7 @@
 
 #profile-picture {
   border: 1px solid rgba(0,0,0,0.5);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 #col-profile-left {
@@ -14,6 +14,21 @@
 .panel-profile-left {
   margin-top: 25px;
   font-weight: bold;
+}
+
+#greeting h1 {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+#greeting p {
+  font-family: "Arial", "Helvetica", sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  color: #333;
+  
 }
 
 .profile-item-listing {
@@ -54,7 +69,6 @@
 .user-show-review-pic img{
   border-radius: 2px;
   border: 1px solid #888;
-  margin-right: 20px;
 }
 
 .user-show-review-pic {
@@ -67,15 +81,17 @@
   border: 1px solid #ddd;
   border-radius: 2px;
   padding: 20px;
-  margin-left: 30px;
+  margin-left: 10px;
   width: 50%;
   background-color: #fafafa;
   
 }
 
 .user-show-review {
-  margin-bottom: 15px;
+  padding-top: 5px;
+  margin-bottom: 10px;
   margin-right: -420px;
+  padding-left: 30px;
 }
 
 .review-date {
@@ -87,4 +103,45 @@
 
 .user-show-review-author {
   width: 68px;
+}
+
+.panel-heading h4 {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.glyphicon-user {
+  font-size: 14px;
+  float: left;
+  line-height: 19px;
+  margin-right: 7px;
+  color: #666;
+}
+
+.profile-panel-body {
+  font-weight: 400;
+  color: #666;
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+#greeting h4 {
+  color: #666;
+  font-family: "Georgia";
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+#profile-review-btn {
+  margin-top: 20px;
+  float: right;
+  margin-right: 80px;
+}
+
+#greeting {
+  padding-left: 20px;
+}
+
+#profile-reviews-title {
+  margin-left: 20px;
 }

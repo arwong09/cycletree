@@ -6,20 +6,20 @@
   
     <div class="panel panel-default panel-profile-left">
       <div class="panel-heading">
-        Email Address
+        <h4>Email Address</h4>
       </div>
     
-      <div class="panel-body">
-        <span class="glyphicon glyphicon-envelope" /><%= @user.email %>
+      <div class="panel-body profile-panel-body">
+        <div class="glyphicon glyphicon-user"></div><%= @user.email %>
       </div>
     </div>
   
     <div class="panel panel-default panel-profile-left">
       <div class="panel-heading">
-        About Me
+        <h4>About Me</h4>
       </div>
     
-      <div class="panel-body">
+      <div class="panel-body profile-panel-body">
         <%= @user.blurb %>
       </div>
     </div>
@@ -34,16 +34,16 @@
     </div>
   </div><!-- LEFT COLUMN -->
   
-  <div class="col-xs-9">
-    <div class="row">
+  <div class="col-xs-9" id="profile-body-col">
+    <div class="row" id="greeting">
       <h1>Hey<% if @user.full_name %>, I'm <%= @user.full_name.split(' ').first %><% end %>!
       </h1>
-      
+      <h4><%= @user.title if @user.title %></h4>
       <p><%= @user.description %></p>
     </div>
     <di class="container">
     <div class="row">
-      <h3>Reviews <span>(<%= @num_reviews %>)</span></h3>
+      <h3 id="profile-reviews-title">Reviews <span>(<%= @num_reviews %>)</span></h3>
       <% @reviews.each do |review| %>
         <div class="row user-show-review">
           <div class="col-xs-1 user-show-review-pic">
@@ -59,6 +59,13 @@
           </div>
         </div>
       <% end %>
+    </div>
+    <div id="profile-review-btn">
+      <button class="btn btn-primary" 
+        data-toggle="modal" data-target="#myModal">
+        Leave a Review
+      </button>
+      <%= render partial: "items/review", locals: {owner: @user} %>
     </div>
   </div>
   </div>
