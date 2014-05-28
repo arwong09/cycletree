@@ -13,3 +13,13 @@
 
   <input type="submit" value="Log in">
 </form>
+
+<form action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" 
+    value="<%= form_authenticity_token %>" id="authenticity_token">
+    
+  <input type="hidden" name="user[username]" value="Guest">
+  <input type="hidden" name="user[password]" value="password">
+
+  <button type="submit" class="btn btn-success">Sign in as Guest</button>
+</form>
