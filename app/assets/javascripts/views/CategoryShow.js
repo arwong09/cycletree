@@ -10,19 +10,29 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     
     var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
     this.$el.html(renderedContent);
+    var query = window.location.search.substring(1);
+    var keyword = query.split('=')[1];
+    keyword = keyword.replace(/\+/g, " ");
+    $('#search-filter').val(keyword);
+    this.searchFilter(null, keyword);
     return this;
   },
   
   filteredRender: function(filteredCollection) {
-    var columns = filteredCollection.parseColumns(4);
-    var items1 = columns[0];
-    var items2 = columns[1];
-    var items3 = columns[2];
-    var items4 = columns[3];
+    if (filteredCollection.length === 0) {
+      this.$el.html("nothing found");
+    } else {
+      var columns = filteredCollection.parseColumns(4);
+      var items1 = columns[0];
+      var items2 = columns[1];
+      var items3 = columns[2];
+      var items4 = columns[3];
     
-    var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
-    this.$el.html(renderedContent);
+      var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
+      this.$el.html(renderedContent);
+    }
     return this;
+
   },
   
   searchRender: function(filteredCollection, prevQuery) {
@@ -73,11 +83,16 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     this.filteredRender(filteredCollection);
   },
   
-  searchFilter: function(event) {    
-    var searchString = $(event.target).val();
+  searchFilter: function(event, keyword) {
+    if (keyword) {
+      var searchString = keyword;
+    } else { var searchString = $(event.target).val();}
+    
+    searchString = searchString.replace(/bikes/g, "").replace(/bike/g, "");
+    
 
     var filteredArr = this.collection.filter(function(item) {
-      return item.get('title').toLowerCase().indexOf(searchString) != -1 || item.get('owner').toLowerCase().indexOf(searchString) != -1;
+      return item.get('title').toLowerCase().indexOf(searchString) != -1 || item.get('owner').toLowerCase().indexOf(searchString) != -1 || item.get('category').toLowerCase().indexOf(searchString) != -1;
     })
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
@@ -85,6 +100,6 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   },
   
   initialize: function() {
-    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.collection, 'sync', this.render);
   }
 }); 

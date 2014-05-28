@@ -30,10 +30,10 @@
               <li  class="nav-li">Sign In</li></a>
             <%= render partial: "sessions/sign_in_modal" %>
             <li class="nav-li" id="nav-search-li">
-              <form class="navbar-form navbar-left" role="search">
+              <form action="/bikes/#categories/all" class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                   <input type="text" class="form-control" id="nav-search" 
-                    placeholder="Search for bikes">
+                    placeholder="Search for bikes" name="q">
                 </div>
                 <button id="nav-search-btn" type="submit" class="btn btn-default">Search</button>
               </form>
