@@ -241,13 +241,29 @@
   display: inline-block;
 }
 
+#item-show-more-header img {
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+#item-show-more-header a {
+  font-family: "Georgia";
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .poster-item-show-side {
   float: left;
   border-radius: 3px;
   padding: 4px;
   box-shadow: 0 0 1px rgba(0,0,0,0.4);
-  margin-left: 8px;
+  margin: 8px;
   width: 164px;
+}
+
+.poster-item-show-side a:hover {
+  opacity: 0.9;
+  -webkit-transition: all 0.1s;
 }
 
 #panel-item-show-more {
@@ -281,8 +297,9 @@
 
 #item-show-more-header {
   margin-bottom: 30px;
-  width: 100px;
+  width: 100%;
   margin: 10px auto;
+  text-align: center;
 }
 
 #item-show-more-owner a {
@@ -293,6 +310,9 @@
 
 #item-show-more-owner-title {
   color: #999;
+  font-family: "Georgia";
+  font-size: 16px;
+  font-style: italic;
 }
 
 #item-show-all-reviews {
@@ -364,4 +384,17 @@
   display: list-item;
   list-style: disc outside none;
   line-height: 20px;
+}
+
+.pane-item-show {
+  font-family: "Georgia";
+  color: #666;
+  font-weight: 400;
+  line-height: 25px;
+  font-size: 15px;
+}
+
+.nav-tabs-item-show a {
+  font-weight: bold; 
+  font-size: 14px;
 }

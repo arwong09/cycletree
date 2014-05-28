@@ -43,7 +43,7 @@ $(function() {
 
     <div class="col-xs-12">
       <div id="item-show-owner-pic">
-        <%= image_tag @item.owner.image.url(:item_thumb) %>
+        <%= link_to image_tag(@item.owner.image.url(:item_thumb)), user_url(@item.owner) %>
       </div>
     
       <div id="item-show-owner" class="pull-left">
@@ -284,11 +284,12 @@ $(function() {
           <div class="col-xs-12">
           <div id="item-show-more-container">
             <div class="row">
-              <div class="col-xs-4 col-xs-offset-4">
+              <div class="col-xs-10 col-xs-offset-1">
                 <div id="item-show-more-header">
-                  <%= image_tag @item.owner.image.url(:item_thumb) %>
+                  <a href="<%= user_url(@item.owner) %>">
+                  <%= image_tag @item.owner.image.url(:comment_thumb) %>
                   <div id="item-show-more-owner">
-                    <%= link_to @item.owner.username, user_url(@item.owner) %>
+                    <%= @item.owner.username %></a>
                   </div>                     
                   <div id="item-show-more-owner-title">
                   <%= @item.owner.title %>
