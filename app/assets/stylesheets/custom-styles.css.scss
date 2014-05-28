@@ -7,14 +7,6 @@ body {
   background-color: #f0f0f0;
 }
 
-.jumbotron {
-
-}
-
-.jumbotron h1 {
-
-}
-
 #jumbotron-cat-show {
   background-color: white;
   margin: 0 0 40px -8px;
@@ -108,7 +100,7 @@ body {
   font-family: "Georgia";
   font-weight: bold;
   font-size: 28px;
-  color: #555;
+  color: #333;
 }
 
 #nav-row-2 {
@@ -207,4 +199,8 @@ body {
 
 #footer-col {
   padding: 0;
+}
+
+a {
+  color: #0192b5;
 }
