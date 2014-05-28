@@ -61,6 +61,7 @@ body {
 .nav-li {
   padding: 20px;
   border: 1px solid #d9d9d9;
+  margin-top: 10px;
 }
 
 #below-nav {
@@ -79,7 +80,6 @@ body {
   padding: 5px;
   height: 59px;
   margin-right: 5px;
- 
 }
 
 #nav-search-li input {
@@ -164,5 +164,19 @@ body {
   margin-right: 10px;
 }
 
+#above-nav {
+  
+}
+
+#above-nav-content {
+  float: right;
+  font-size: 12px;
+  margin-right: -13px;
+  margin-top: 10px;
+}
+
+#above-nav-content a {
+  color: #0192b5;
+}
 
 

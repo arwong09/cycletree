@@ -10,10 +10,13 @@
   <body>
     <div id="nav-outer-container">
       <div id="nav-row" class="container">
-        <div class="col-xs-12 pull-right" id="above-nav">
+        <div class="col-xs-12" id="above-nav">
+          <span id="above-nav-content">
           <% if current_user %>
-          Hi, <%= current_user.username %>. <%= link_to "sign out", session_url, method: :delete %>
+          Hi, <%= link_to current_user.username, user_url(current_user) %>.
+          &nbsp; <%= link_to "Sign Out", session_url, method: :delete %>
           <% end %>
+          </span>
         </div>
         <div class="row">
         <div class="col-xs-12">
