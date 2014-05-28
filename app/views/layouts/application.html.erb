@@ -12,10 +12,12 @@
       <div id="nav-row" class="container">
         <div class="row">
         <div class="col-xs-12">
+
           <ul>
             <a href="/"><li id="cycletree-li" class="nav-li">cycletree</li></a>
-            <li class="nav-li">Register</li>
-            <li class="nav-li">Sign In</li>
+            <a href="/users/new"><li class="nav-li">Register</li></a>
+            <a href="/session/new"><li class="nav-li">Sign In</li>
+            <%= render partial: "sessions/sign_in_modal" %>
             <li class="nav-li" id="nav-search-li">
               <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">

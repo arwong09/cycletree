@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     @more_items_side = other_items.shuffle.select { |i| i.image.url != '/images/thumb/missing.png'}[0..7]
     @more_items = other_items.shuffle.select { |i| i.image.url != '/images/thumb/missing.png'}[0..4]
     @reviews = @item.owner.received_reviews[0..4]
-    @cart_items = current_user.cart_items
+    @cart_items = current_user.cart_items if current_user
     render :show
   end
   
