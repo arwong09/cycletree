@@ -10,13 +10,19 @@
   <body>
     <div id="nav-outer-container">
       <div id="nav-row" class="container">
+        <div class="col-xs-12 pull-right" id="above-nav">
+          <% if current_user %>
+          Hi, <%= current_user.username %>. <%= link_to "sign out", session_url, method: :delete %>
+          <% end %>
+        </div>
         <div class="row">
         <div class="col-xs-12">
 
           <ul>
             <a href="/"><li id="cycletree-li" class="nav-li">cycletree</li></a>
             <a href="/users/new"><li class="nav-li">Register</li></a>
-            <a href="/session/new"><li class="nav-li">Sign In</li>
+            <a href="#" data-toggle="modal" data-target="#sign-in-modal">
+              <li  class="nav-li">Sign In</li></a>
             <%= render partial: "sessions/sign_in_modal" %>
             <li class="nav-li" id="nav-search-li">
               <form class="navbar-form navbar-left" role="search">
@@ -38,20 +44,21 @@
         </div>
         <div class="col-xs-2 col-xs-offset-1">
           <ul class="nav-cat-ul">
-            <a href="#"><li>Fixed Gear</li></a>
-            <a href="#"><li>Road</li></a>
+            <a href="/bikes/#/categories/all"><li>All Bikes</li></a>
+            <a href="/bikes/#/categories/1"><li>Fixed Gear</li></a>
+            <a href="/bikes/#/categories/3"><li>Road</li></a>
           </ul>
         </div>
         <div class="col-xs-2">
           <ul class="nav-cat-ul">
-            <a href="#"><li>Cruiser</li></a>
-            <a href="#"><li>City</li></a>
+            <a href="/bikes/#/categories/2"><li>Cruiser</li></a>
+            <a href="/bikes/#/categories/5"><li>City</li></a>
           </ul>
         </div>
         <div class="col-xs-2">
           <ul class="nav-cat-ul">
-            <a href="#"><li>Vintage</li></a>
-            <a href="#"><li>Mountain</li></a>
+            <a href="/bikes/#/categories/6"><li>Vintage</li></a>
+            <a href="/bikes/#/categories/4"><li>Mountain</li></a>
           </ul>
         <!-- </div> -->
         </div>
@@ -62,11 +69,7 @@
     
     <div id="below-nav">
     
-      <% if flash[:errors] %>
-        <% flash[:errors].each do |error|%>
-          <%= error %>
-        <% end %>
-      <% end %>
+    
 
       <%= yield %>
     </div>

@@ -10,8 +10,13 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @category = Category.find(params[:id])
-    @items = @category.items
+    if params[:id] == "0"
+      @items = Item.all
+    else
+      @category = Category.find(params[:id])
+      @items = @category.items
+    end
+
     render 'items/index'
   end
   
