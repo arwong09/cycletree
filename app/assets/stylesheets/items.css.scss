@@ -83,16 +83,21 @@
   height: 75px;
 }
 
-#item-show-more-count {
+.item-show-more-count {
   width: 69px;
   height: 69px;
-  display: block;
+  padding-top: 17px;
 }
 
-#item-show-more-count h3 {
-  text-align: center;
-  margin: 0;
+.item-show-more-count:hover {
+  background-color: #D7E8F0;
+  -webkit-transition: all .1s;
 }
+
+.item-show-more-count:hover a {
+  text-decoration: none;
+}
+
 
 #item-show-more-num {
   font-size: 22px;
@@ -102,7 +107,6 @@
   width: 50px;
   line-height: 20px;
   text-align: center;
-  margin-top: 17px;
 }
 
 #item-show-more-word {
