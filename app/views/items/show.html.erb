@@ -130,7 +130,9 @@ $(function() {
           </div>
           <div class="tab-pane pane-item-show" id='tab-reviews'>
             <% if @reviews.length == 0 %>
+            <div class="no-reviews-yet">
               <%= @item.owner.username %> doesn't have any reviews yet...
+            </div>
             <% else %>
               <% @reviews.each do |review| %>
                 <div class="item-show-review-pane">
@@ -160,7 +162,11 @@ $(function() {
               <% end %>
             <% end %>
             <a href="<%= user_url(@item.owner) %>" class="btn btn-primary" id="item-show-all-reviews">
+              <% if @reviews.length == 0 %>
+              Leave a Review
+              <% else %>
               Read More Reviews
+              <% end %>
             </a>
           </div>
         </div><!-- REVIEW TAB PANES -->
