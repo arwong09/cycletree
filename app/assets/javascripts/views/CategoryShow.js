@@ -25,6 +25,13 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     
     var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
     this.$el.html(renderedContent);
+    this.handleSearchBar();
+    this.updatePageTitle();
+    
+    return this;
+  },
+  
+  handleSearchBar: function() {
     var query = window.location.search.substring(1);
     var keyword = query.split('=')[1];
     if (keyword) {
@@ -32,6 +39,9 @@ Cycletree.CategoriesShow = Backbone.View.extend({
       $('#search-filter').val(keyword);
       this.searchFilter(null, keyword);
     }
+  },
+  
+  updatePageTitle: function() {
     if (this.collection) {
       if (this.collection.category_id === 0) {
         $('#nav-title').html('<h1>Shop All Bikes</h1>');
@@ -39,13 +49,13 @@ Cycletree.CategoriesShow = Backbone.View.extend({
         $('#nav-title').html('<h1>Shop ' + this.collection.first().get('category') + 's</h1>');
       }
     }
-    return this;
   },
   
   filteredRender: function() {
     var filteredArr = this.condFiltered.filter(function(item){
       return this.priceFiltered.indexOf(item) != -1 && this.searchFiltered.indexOf(item) != -1;
     }.bind(this))
+    
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
     var columns = filteredCollection.parseColumns(4);
     var items1 = columns[0];
@@ -55,22 +65,24 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   
     var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
     this.$el.html(renderedContent);
+    this.toggleCondButtons();
+    return this;
+  },
+  
+  toggleCondButtons: function() {
     this.$("#search-filter").focus().val(this.query);
     this.$('.btn-options').removeClass('active');
-   
     $('#' + this.activeID).addClass('active');
-    return this;
   },
   
   condFilter: function(event) {
     var condition = $(event.target).data('condition');
+    
     if (condition) {
       var filteredArr = this.collection.where({condition: condition});
       var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
       this.condFiltered = filteredCollection;
-    } else {
-      this.condFiltered = this.collection;
-    }
+    } else { this.condFiltered = this.collection; }
 
     this.activeID = $(event.target).attr('id');
     this.filteredRender();
@@ -81,8 +93,8 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     var priceLookup = $(event.target).data('price');
     
     if (priceLookup) {
-      var minPrice = { 'price-b': 0, 'price-c': 500, 'price-d': 1000, 'price-e': 2500 }
-      var maxPrice = { 'price-b': 500, 'price-c': 1000, 'price-d': 2500, 'price-e': 1000000 }
+      var minPrice = { 'price-b': 0, 'price-c': 500, 'price-d': 1000, 'price-e': 2500 };
+      var maxPrice = { 'price-b': 500, 'price-c': 1000, 'price-d': 2500, 'price-e': 1000000 };
 
       var filteredArr = this.collection.filter(function(item) {
         return item.get('price') > minPrice[priceLookup] && item.get('price') < maxPrice[priceLookup];
@@ -90,9 +102,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
       
       var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
       this.priceFiltered = filteredCollection;
-    } else {
-      this.priceFiltered = this.collection;
-    }
+    } else { this.priceFiltered = this.collection; }
 
     this.filteredRender();
   },
@@ -104,7 +114,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     
     this.query = inputString;
     
-    searchString = inputString.replace(/bikes/g, "").replace(/bike/g, "").replace(/bicycle/g, "").replace(/bicycles/g, "");
+    searchString = inputString.replace(/bikes|bike|bicycle|bicycles/g, "");
 
     var filteredArr = this.collection.filter(function(item) {
       return item.get('title').toLowerCase().indexOf(searchString) != -1 || item.get('owner').toLowerCase().indexOf(searchString) != -1 || item.get('category').toLowerCase().indexOf(searchString) != -1;
