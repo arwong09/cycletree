@@ -52,8 +52,13 @@ $(function() {
         </h3>
       
         <div class="pull-left">
-          <button class="btn btn-secondary btn-sm  item-show-review" 
-            data-toggle="modal" data-target="#review-modal">
+          <button class="btn btn-secondary btn-sm item-show-review"  
+            data-toggle="modal"
+            <% if current_user %>
+            data-target="#review-modal"
+            <% else %>
+            data-target="#sign-in-modal"
+            <% end %>>
             <span class="glyphicon glyphicon-star"></span> Leave a Review
           </button>
           <%= render partial: "review", locals: {owner: @item.owner} %>
@@ -87,9 +92,15 @@ $(function() {
         <div class="col-xs-7">
           <div class="jumbotron" id="jumbotron-item-show">
             <div class="col-xs-2">
+              <% if current_user %>
               <form action="<%= item_favorites_url(@item) %>" method="POST" id="form-submit-favorite">
-                
-              <button type="submit" id="submit-favorite" class='btn btn-secondary item-show-favorite'>
+                <% end %>
+              <button id="submit-favorite" class='btn btn-secondary item-show-favorite'
+              <% if current_user %>
+              type="submit"
+              <% else %>
+              data-target="#sign-in-modal" data-toggle="modal"
+              <% end %>>
                 <span class='glyphicon glyphicon-heart glyphicon-sm'
                 <% if current_user %>
                 <% if !current_user.favorited_items.where( id: @item.id ).empty? %>
@@ -179,7 +190,12 @@ $(function() {
           <div class='item-show-price'>
             $<%= @item.price %>
           </div>
-          <div class="btn btn-secondary item-show-question" data-toggle="modal" data-target="#ask-question">
+          <div class="btn btn-secondary item-show-question" data-toggle="modal" 
+          <% if current_user %>
+          data-target="#ask-question"
+          <% else %>
+          data-target="#sign-in-modal"
+          <% end %>>
             Ask a Question
           </div>
           <!-- Button trigger modal -->
@@ -226,8 +242,13 @@ $(function() {
             value="<%= form_authenticity_token %>">
 
           <input class="btn" id='btn-add-to-cart' data-toggle="modal"
-            data-target="#user-cart" type="submit" class="close" 
-            data-dismiss="modal" aria-hidden="true" value="Add to Cart">
+            class="close" 
+            data-dismiss="modal" aria-hidden="true" value="Add to Cart"
+            <% if current_user %>
+            data-target="#user-cart" type="submit"
+            <% else %>
+            data-target="#sign-in-modal"
+            <% end %>>
         </form>
 
         <!-- Modal -->
