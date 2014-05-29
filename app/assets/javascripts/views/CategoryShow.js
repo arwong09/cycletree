@@ -57,14 +57,21 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     }.bind(this))
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
+      
     var columns = filteredCollection.parseColumns(4);
     var items1 = columns[0];
     var items2 = columns[1];
     var items3 = columns[2];
     var items4 = columns[3];
-  
+
     var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
+   
+    
     this.$el.html(renderedContent);
+    if (filteredCollection.length === 0) {
+      $('#filter-results').html("<div id='nothing-found' class='col-xs-4 col-xs-offset-4'>Nothing found.  Try something else!</div>");
+    }
+    
     this.toggleCondButtons();
     return this;
   },
