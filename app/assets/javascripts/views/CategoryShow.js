@@ -7,6 +7,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     this.priceFiltered = this.collection;
     this.searchFiltered = this.collection;
     this.condFiltered = this.collection;
+    this.query = "";
   },
   
   events: {
@@ -64,7 +65,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   
   filteredRender: function() {
     var filteredArr = this.condFiltered.filter(function(item){
-      return this.priceFiltered.indexOf(item) != -1;
+      return this.priceFiltered.indexOf(item) != -1 && this.searchFiltered.indexOf(item) != -1;
     }.bind(this))
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
       var columns = filteredCollection.parseColumns(4);
@@ -75,6 +76,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     
       var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
       this.$el.html(renderedContent);
+      this.$("#search-filter").focus().val(this.query);
     return this;
   },
   
@@ -142,15 +144,18 @@ Cycletree.CategoriesShow = Backbone.View.extend({
       var inputString = keyword;
     } else { var inputString = $(event.target).val(); }
     
+    this.query = inputString;
+    
     searchString = inputString.replace(/bikes/g, "").replace(/bike/g, "").replace(/bicycle/g, "").replace(/bicycles/g, "");
 
-    var filteredArr = this.filteredCollection.filter(function(item) {
+    var filteredArr = this.collection.filter(function(item) {
       return item.get('title').toLowerCase().indexOf(searchString) != -1 || item.get('owner').toLowerCase().indexOf(searchString) != -1 || item.get('category').toLowerCase().indexOf(searchString) != -1;
     })
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
     // this.searchRender(filteredCollection, inputString);
-    this.filteredCollection = filteredCollection;
+    this.searchFiltered = filteredCollection;
+    this.filteredRender();
   },
   
  
