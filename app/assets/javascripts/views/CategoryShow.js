@@ -8,6 +8,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     this.searchFiltered = this.collection;
     this.condFiltered = this.collection;
     this.query = "";
+    this.activeID = "options-all";
   },
   
   events: {
@@ -59,6 +60,9 @@ Cycletree.CategoriesShow = Backbone.View.extend({
       var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
       this.$el.html(renderedContent);
       this.$("#search-filter").focus().val(this.query);
+      this.$('.btn-options').removeClass('active');
+     
+      $('#' + this.activeID).addClass('active');
     return this;
   },
   
@@ -84,12 +88,9 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     } else {
       this.condFiltered = this.collection;
     }
-    
-    this.$('.btn-options').removeClass('active');
-    var id = $(event.target).attr('id')
-    this.$('#' + id).addClass('active');
+
+    this.activeID = $(event.target).attr('id');
     this.filteredRender();
-    return this;
   },
     
   priceFilter: function(event) {
