@@ -73,7 +73,12 @@
       </a>
       <% else %>
       <button class="btn btn-primary" 
-        data-toggle="modal" data-target="#myModal">
+        data-toggle="modal" 
+        <% if current_user %>
+        data-target="#review-modal"
+        <% else %>
+        data-target="#sign-in-modal"
+        <% end %>>
         Leave a Review
       </button>
       <%= render partial: "items/review", locals: {owner: @user} %>
