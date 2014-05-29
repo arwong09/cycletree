@@ -44,6 +44,11 @@
     <di class="container">
     <div class="row">
       <h3 id="profile-reviews-title">Reviews <span>(<%= @num_reviews %>)</span></h3>
+      <% if @reviews.length == 0 %>
+      <div id="no-reviews">
+        <%= @user.username %> doesn't have any reviews yet.  Leave one!
+      </div>
+        <% else %>
       <% @reviews.each do |review| %>
         <div class="row user-show-review">
           <div class="col-xs-1 user-show-review-pic">
@@ -58,6 +63,7 @@
             </div>
           </div>
         </div>
+      <% end %>
       <% end %>
     </div>
     <div id="profile-review-btn">
