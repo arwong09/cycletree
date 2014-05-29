@@ -19,24 +19,6 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     "keyup #search-filter": "searchFilter"
   },
   
-  // multiFilter: function(event) {
-  //   this.condFilter(event);
-  //   // this.priceFilter(event);
-  //   multiFiltered = this.condFiltered;
-  // 
-  //   // var priceAndCondFiltered = cond
-  //   // this.priceFilter(event);
-  //   // this.searchFilter(event);
-  //   debugger
-  //   
-  //   if (this.priceFiltered.length > 0) {
-  //     var multiFiltered = this.condFiltered.filter(function(item) {
-  //       return this.priceFiltered.indexOf(item) != -1;
-  //     })
-  //   }
-  //   this.filteredRender(multiFiltered);
-  // },
-  
   render: function() {
     var columns = this.collection.parseColumns(4);
     var items1 = columns[0];
@@ -80,22 +62,6 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     return this;
   },
   
-  // filteredRender: function(filteredCollection) {
- //    if (filteredCollection.length === 0) {
- //      this.$el.html("nothing found");
- //    } else {
- //      var columns = filteredCollection.parseColumns(4);
- //      var items1 = columns[0];
- //      var items2 = columns[1];
- //      var items3 = columns[2];
- //      var items4 = columns[3];
- //    
- //      var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
- //      this.$el.html(renderedContent);
- //    }
- //    return this;
- //  },
-  
   searchRender: function(filteredCollection, prevQuery) {
     var columns = filteredCollection.parseColumns(4);
     var items1 = columns[0];
@@ -111,10 +77,13 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   
   condFilter: function(event) {
     var condition = $(event.target).data('condition');
-    var filteredArr = this.collection.where({condition: condition});
-    var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
-    // this.filteredRender(filteredCollection);
-    this.condFiltered = filteredCollection;
+    if (condition) {
+      var filteredArr = this.collection.where({condition: condition});
+      var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
+      this.condFiltered = filteredCollection;
+    } else {
+      this.condFiltered = this.collection;
+    }
     
     this.$('.btn-options').removeClass('active');
     var id = $(event.target).attr('id')
@@ -133,10 +102,8 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     })
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
-    // this.filteredCollection = filteredCollection;
     this.priceFiltered = filteredCollection;
     this.filteredRender();
-    // this.filteredRender(filteredCollection);
   },
   
   searchFilter: function(event, keyword) {
@@ -153,10 +120,7 @@ Cycletree.CategoriesShow = Backbone.View.extend({
     })
     
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
-    // this.searchRender(filteredCollection, inputString);
     this.searchFiltered = filteredCollection;
     this.filteredRender();
   },
-  
- 
 }); 
