@@ -203,16 +203,16 @@ $(function() {
           <div class="modal fade" id="ask-question" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" id="question-title">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="myModalLabel">Ask <%= @item.owner.username %> a question</h4>
+                  <h4 class="modal-title">Ask <%= @item.owner.username %> a question</h4>
                 </div>
                 <div class="form-group col-xs-10 col-xs-offset-1">
                   <input class="form-control">
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" id="question-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-primary">Ask!</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Ask!</button>
                 </div>
               </div>
             </div>
