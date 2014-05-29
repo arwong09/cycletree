@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :received_reviews, class_name: :Review, foreign_key: :seller_id
   has_many :authored_reviews, class_name: :Review, foreign_key: :author_id
   has_one :cart, class_name: :Cart, foreign_key: :owner_id
-  has_many :cart_items, through: :cart, source: :items
+  has_many :cart_items, through: :cart, source: :cart_items
   has_many :favorites
   has_many :favorited_items, through: :favorites, source: :item
   

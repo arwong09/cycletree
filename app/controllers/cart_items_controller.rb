@@ -4,8 +4,10 @@ class CartItemsController < ApplicationController
   end
 
   def create
-    new_item = current_user.cart.cart_items.new({item_id: params[:item_id]})
-    new_item.save
+    item = current_user.cart.cart_items.new({item_id: params[:item_id]})
+    current_user.save!
+    current_user.cart.save!
+    item.save!
   end
   
   def destroy

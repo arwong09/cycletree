@@ -200,6 +200,7 @@
           method="post">
           <input type="hidden" name="authenticity_token" 
             value="<%= form_authenticity_token %>">
+            
 
           <input class="btn" id='btn-add-to-cart' data-toggle="modal"
             class="close" 
@@ -228,16 +229,15 @@
                 
                 <% if current_user %>
                 <% @cart_items.each do |ci| %>
-                  <% #next if ci == @item %>
+                <% next if ci.item == @item %>
                 <div class="cart-item row" id="cart-item-<%= ci.id %>">
                   <div class="col-xs-3">
-                    <%= link_to image_tag(ci.image.url(:cart)), item_url(ci) %>
+                    <%= link_to image_tag(ci.item.image.url(:cart)), item_url(ci) %>
                   </div>
                   <div class="col-xs-9">
-                    <%= link_to ci.title, item_url(ci) %>
-                    <%= ci.description %>
-                    <form action="<%= cart_item_url(
-                      ci.cart_items.find_by(cart_id: current_user.cart.id)) %>"                       method="post" data-id="<%= ci.id %>"           
+                    <%= link_to ci.item.title, item_url(ci) %>
+                    <%= ci.item.description %>
+                    <form action="<%= cart_item_url(ci) %>"                       method="post" data-id="<%= ci.id %>"           
                       class="form-cart-remove">
                         <input type="hidden" name="authenticity_token" 
                           value="<%= form_authenticity_token %>">
@@ -325,6 +325,10 @@ $(function() {
     var id = $(event.target).data('id')
     $('#cart-item-' + id).remove();
   });
+  
+  $('cart-form').submit(function(event) {
+    
+  })
   
   $('#form-submit-favorite').submit(function(event) {
     event.preventDefault();

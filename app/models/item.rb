@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
   belongs_to :owner, class_name: :User, foreign_key: :owner_id
   has_many :category_joins, class_name: :CategoryJoin, foreign_key: :item_id
   has_many :categories, through: :category_joins, source: :category
-  has_many :cart_items
+  has_many :cart_items, class_name: :CartItem, foreign_key: :item_id
   has_many :carts, through: :cart_items, source: :cart
   has_many :favorites
   has_many :favoriting_users, through: :favorites, source: :user
