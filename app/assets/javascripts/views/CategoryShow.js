@@ -93,16 +93,23 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   },
     
   priceFilter: function(event) {
+    event.preventDefault();
     var priceLookup = $(event.target).data('price');
-    var minPrice = { 'price-b': 0, 'price-c': 500, 'price-d': 1000, 'price-e': 2500 }
-    var maxPrice = { 'price-b': 500, 'price-c': 1000, 'price-d': 2500, 'price-e': 1000000 }
-
-    var filteredArr = this.collection.filter(function(item) {
-      return item.get('price') > minPrice[priceLookup] && item.get('price') < maxPrice[priceLookup];
-    })
     
-    var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
-    this.priceFiltered = filteredCollection;
+    if (priceLookup) {
+      var minPrice = { 'price-b': 0, 'price-c': 500, 'price-d': 1000, 'price-e': 2500 }
+      var maxPrice = { 'price-b': 500, 'price-c': 1000, 'price-d': 2500, 'price-e': 1000000 }
+
+      var filteredArr = this.collection.filter(function(item) {
+        return item.get('price') > minPrice[priceLookup] && item.get('price') < maxPrice[priceLookup];
+      })
+      
+      var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
+      this.priceFiltered = filteredCollection;
+    } else {
+      this.priceFiltered = this.collection;
+    }
+
     this.filteredRender();
   },
   
