@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="row" id="filters-row">
-        <div class="btn-group pull-left">
+        <div class="btn-group pull-left" id="cond-filter-div">
           <button class="btn btn-options active btn-xs" id="options-all">
             All Cycles
           </button>
@@ -21,7 +21,7 @@
             type="button" data-toggle="dropdown">
             Price <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" id="price-filter-ul">
             <li><a href="#" id="options-price-any">Any price</a></li>
             <li><a href="#" class="options-price" data-price="price-b">Under $500</a></li>
             <li><a href="#" class="options-price" data-price="price-c">$500 - $1000</a></li>

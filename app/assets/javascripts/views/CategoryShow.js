@@ -3,7 +3,6 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   
   initialize: function() {
     this.listenTo(this.collection, 'sync', this.render);
-    // this.filteredCollection = this.collection;
     this.priceFiltered = this.collection;
     this.searchFiltered = this.collection;
     this.condFiltered = this.collection;
@@ -12,11 +11,8 @@ Cycletree.CategoriesShow = Backbone.View.extend({
   },
   
   events: {
-    "click #options-new": "condFilter",
-    "click #options-all": "condFilter",
-    "click #options-used": "condFilter",
-    "click .options-price": "priceFilter",
-    "click #options-price-any": "priceFilter",
+    "click #price-filter-ul a": "priceFilter",
+    "click #cond-filter-div button": "condFilter",
     "keyup #search-filter": "searchFilter"
   },
   
@@ -51,31 +47,18 @@ Cycletree.CategoriesShow = Backbone.View.extend({
       return this.priceFiltered.indexOf(item) != -1 && this.searchFiltered.indexOf(item) != -1;
     }.bind(this))
     var filteredCollection = new Cycletree.Items(filteredArr, {category_id: this.collection.category_id});
-      var columns = filteredCollection.parseColumns(4);
-      var items1 = columns[0];
-      var items2 = columns[1];
-      var items3 = columns[2];
-      var items4 = columns[3];
-    
-      var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
-      this.$el.html(renderedContent);
-      this.$("#search-filter").focus().val(this.query);
-      this.$('.btn-options').removeClass('active');
-     
-      $('#' + this.activeID).addClass('active');
-    return this;
-  },
-  
-  searchRender: function(filteredCollection, prevQuery) {
     var columns = filteredCollection.parseColumns(4);
     var items1 = columns[0];
     var items2 = columns[1];
     var items3 = columns[2];
     var items4 = columns[3];
-    
+  
     var renderedContent = this.template({items1: items1, items2: items2, items3: items3, items4 : items4});
     this.$el.html(renderedContent);
-    this.$("#search-filter").focus().val(prevQuery);
+    this.$("#search-filter").focus().val(this.query);
+    this.$('.btn-options').removeClass('active');
+   
+    $('#' + this.activeID).addClass('active');
     return this;
   },
   
