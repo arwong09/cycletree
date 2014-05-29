@@ -317,20 +317,28 @@
 
 #item-show-all-reviews {
   margin: 30px 0;
+  font-family: "Arial";
 }
 
 
 .item-show-review-body {
   font-size: 14px;
   color: #666;
-  font-weight: 400;
+  font-weight: 300;
+  line-height: 22px;
 }
 
 .item-show-review-pane {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   overflow: hidden;
   background: #fff;
-  padding: 20px 20px 30px 20px;
+  padding: 20px 0 30px 0;
+}
+
+.reviewed-by {
+  font-family: "Arial", "Helvetica", sans-serif;
+  margin-top: 5px;
+  height: 17px;
 }
 
 
@@ -397,4 +405,18 @@
 .nav-tabs-item-show a {
   font-weight: bold; 
   font-size: 14px;
+}
+
+.reviewer {
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+.star-review {
+  color: #F0DE00;
+  opacity: .7;
+}
+
+.review-stars {
+  clear: right;
+  margin-bottom: 2px;
 }

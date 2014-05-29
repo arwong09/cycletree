@@ -138,21 +138,29 @@ $(function() {
                    <div class="row">
                      <%= link_to image_tag(
                        review.author.image.url(:review_thumb), 
-                       class: "img-circle") %>
-                     <br><br>Reviewed by<br>
-                     <%= link_to review.author.username,
-                      user_url(review.author)%>
+                       class: "img-circle"
+                       ), user_url(review.author) %>
+                     <div class="reviewed-by">Reviewed by</div>
+                       <%= link_to review.author.username,
+                        user_url(review.author), class: "reviewer"%>
                     </div>
                    </div>
                    
                    <div class="col-xs-9 item-show-review-body">
+                     <div class="review-stars">
+                     <span class="glyphicon glyphicon-star star-review"></span>
+                     <span class="glyphicon glyphicon-star star-review"></span>
+                     <span class="glyphicon glyphicon-star star-review"></span>
+                     <span class="glyphicon glyphicon-star star-review"></span>
+                     <span class="glyphicon glyphicon-star star-review"></span>
+                     </div>
                      <%= review.body %>
                    </div>
                  </div>
               <% end %>
             <% end %>
             <a href="<%= user_url(@item.owner) %>" class="btn btn-primary" id="item-show-all-reviews">
-              Read All Reviews
+              Read More Reviews
             </a>
           </div>
         </div><!-- REVIEW TAB PANES -->

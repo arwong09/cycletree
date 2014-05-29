@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :favorited_items, through: :favorites, source: :item
   
-  has_attached_file :image, styles: { review_thumb: "45x45#", item_thumb: "77x77#", comment_thumb: "68x68#", profile: "230x230#" }
+  has_attached_file :image, styles: { review_thumb: "45x45#", item_thumb: "77x77#", comment_thumb: "68x68#", profile: "230x230#" }, default_url: "/images/missing/:style.png"
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   
   def self.find_by_credentials(username, password)

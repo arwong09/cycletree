@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#profile-picture {
-  border: 1px solid rgba(0,0,0,0.5);
-  border-radius: 3px;
+#profile-picture img{
+  border-radius: 2px;
 }
 
 #col-profile-left {
@@ -67,8 +66,8 @@
 }
 
 .user-show-review-pic img{
-  border-radius: 2px;
-  border: 1px solid #888;
+  border-radius: 3px;
+  border: 1px solid #999;
 }
 
 .user-show-review-pic {

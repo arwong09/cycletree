@@ -17,23 +17,18 @@
           <%= f.text_field :email, class: 'form-control' %>
         </div>
         
-        <div class="form-group edit-profile-form">
-          <%= f.label "Describe yourself in one line!" %>
-          <%= f.text_field :blurb, class: 'form-control' %>
-        </div>
-        
         <div class="form-group edit-profile-form" id="form-user-title">
           <%= f.label "What do you do?" %>
           <%= f.text_field :title, class: 'form-control' %>
         </div>
         
-        <div class="form-group edit-profile-form" id="form-user-profile">
-          <%= f.label "A few facts about you" %>
-          <%= f.text_field :profile, class: 'form-control' %>
+        <div class="form-group edit-profile-form">
+          <%= f.label "A Fun Fact About You!" %>
+          <%= f.text_field :blurb, class: 'form-control' %>
         </div>
       
         <div class="form-group edit-profile-form" id="form-user-description">
-          <%= f.label "Describe yourself" %>
+          <%= f.label "Describe Yourself:" %>
           <%= f.text_area :description, class: 'form-control', rows: '10' %>
         </div>
   

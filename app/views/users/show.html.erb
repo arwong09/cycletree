@@ -67,11 +67,17 @@
       <% end %>
     </div>
     <div id="profile-review-btn">
+      <% if @user == current_user %>
+      <a class="btn btn-primary" href="<%= edit_user_url (current_user) %>">
+        Edit Profile
+      </a>
+      <% else %>
       <button class="btn btn-primary" 
         data-toggle="modal" data-target="#myModal">
         Leave a Review
       </button>
       <%= render partial: "items/review", locals: {owner: @user} %>
+      <% end %>
     </div>
   </div>
   </div>
