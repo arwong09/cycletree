@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
   
     if @user
       login!(@user)
-      redirect_to user_url(@user)
+      redirect_to :back
     else
       @user = User.new(username: username, password: password)
       
       if @user.save
         login!(@user)
-        redirect_to root_url
+        redirect_to :back
       else
         flash.now[:errors] = @user.errors.full_messages
         render 'users/new'
