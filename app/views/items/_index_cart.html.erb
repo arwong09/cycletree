@@ -15,7 +15,7 @@
       <div class="cart-body">
         <% if current_user.cart_items.length == 0 %>
           <div class="cart-item row">
-            nothing in your cart
+            <span id="nothing-in-cart">Nothing in your cart...</span>
           </div>
         <% else %>
           <% current_user.cart_items.each do |ci| %>

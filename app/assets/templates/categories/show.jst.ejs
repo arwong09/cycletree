@@ -43,7 +43,7 @@
   
   <div class="row" id="filter-results">
     <div class="col-xs-3">
-      <% _(10).times(function(){items1.each(function(item){ %>
+      <% items1.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items1.category_id %>/items/
             <%= item.escape('id') %>">
@@ -64,11 +64,11 @@
             <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
-      <% })}) %>
+      <% }) %>
     </div>
      
     <div class="col-xs-3">
-      <% _(10).times(function(){items2.each(function(item){ %>
+      <% items2.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items2.category_id %>/items/
             <%= item.escape('id') %>">
@@ -89,11 +89,11 @@
             <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
-        <% })}) %>
+        <% }) %>
     </div>
     
     <div class="col-xs-3">
-      <% _(10).times(function(){items3.each(function(item){ %>
+      <% items3.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items3.category_id %>/items/
             <%= item.escape('id') %>">
@@ -114,11 +114,11 @@
             <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
-      <% })}) %>
+      <% }) %>
     </div> 
     
     <div class="col-xs-3">
-      <% _(10).times(function(){items4.each(function(item){ %>
+      <% items4.each(function(item){ %>
         <div class='poster poster-show'>
           <a href="/categories/<%= items4.category_id %>/items/
             <%= item.escape('id') %>">
@@ -139,7 +139,7 @@
             <span class="poster-item-price">$<%= item.escape('price') %></span>
           </div>
         </div>
-      <% })}) %>
+      <% }) %>
     </div>
   </div><!-- BIKES ROW -->
   

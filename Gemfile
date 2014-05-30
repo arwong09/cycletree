@@ -41,6 +41,8 @@ gem 'aws-sdk'
 
 gem 'figaro'
 
+gem 'seed_dump'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
