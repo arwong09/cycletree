@@ -10,13 +10,12 @@ class CartItemsController < ApplicationController
       item.save
     end
     render nothing: true, status: :ok
-    return false
-    redirect_to :back #item_url(Item.find(params[:item_id]))
   end
   
   def destroy
     item = CartItem.find(params[:id])
     item.destroy
+    redirect_to :back
   end
   
   def index
