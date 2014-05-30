@@ -14,4 +14,15 @@ class CartItemsController < ApplicationController
     item = CartItem.find(params[:id])
     item.destroy
   end
+  
+  def index
+    @items = current_user.cart_items.map{ |ci| ci.item }
+    render "cart_items/index"
+  end
+
+  
+  def show
+    @item = CartItem.find(params[:id])
+    render "cart_items/show"
+  end
 end

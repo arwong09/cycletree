@@ -1,1 +1,3 @@
-Cycletree.CartItem = Backbone.Model.extend({});
+Cycletree.CartItem = Backbone.Model.extend({
+  urlRoot: '/cart_item'
+});
