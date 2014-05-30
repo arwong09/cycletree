@@ -5,9 +5,13 @@ class CartItemsController < ApplicationController
 
   def create
     item = current_user.cart.cart_items.new({item_id: params[:item_id]})
-    current_user.save!
-    current_user.cart.save!
-    item.save!
+    if current_user.save
+      current_user.cart.save
+      item.save
+    end
+    render nothing: true, status: :ok
+    return false
+    redirect_to :back #item_url(Item.find(params[:item_id]))
   end
   
   def destroy

@@ -260,7 +260,10 @@ $(function() {
       data: valuesToSubmit,
       dataType: "JSON"
     })
+    return false;
   });
+  
+  $('#user-cart').on('hidden.bs.modal', function(){location.reload();});
   
   $('.form-cart-remove').submit(function(event) {
     event.preventDefault();

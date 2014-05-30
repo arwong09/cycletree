@@ -60,9 +60,10 @@
                 data-target="#sign-in-modal"
               <% end %>>
               Cart&nbsp; <span class="glyphicon glyphicon-shopping-cart"></span>
-              <% if current_user %>
+              <% if current_user && current_user.cart_items.length > 0 %>
+              
                 <span class="badge" id="cart-badge">
-                  <%= current_user.cart_items.length if current_user.cart_items.length > 0 %>
+                  <%= current_user.cart_items.length %>
                 </span>
               <% end %>
             </li>
