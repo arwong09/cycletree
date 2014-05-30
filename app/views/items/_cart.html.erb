@@ -19,14 +19,6 @@
                   <div class="col-xs-9">
                     <%= link_to @item.title, item_url(@item) %>
                     <%= @item.description %>
-                    <form action="/items/<%= CartItem.find_by(cart_id: current_user.cart.id, item_id: @item.id).id if CartItem.find_by(cart_id: current_user.cart.id, item_id: @item.id) %>"                       method="post" data-id="<%= @item.id %>"           
-                      class="form-cart-remove">
-                        <input type="hidden" name="authenticity_token" 
-                          value="<%= form_authenticity_token %>">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="submit" name="some_name" value="remove" 
-                          id="some_name" class="cart-remove-btn">  
-                    </form>
                   </div>
                 </div>
                 
