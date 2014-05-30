@@ -1,0 +1,55 @@
+<div class="modal fade" id="index-user-cart" tabindex="-1" role="dialog" 
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" 
+          aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">
+          Items in Your Cart
+        </h4>
+      </div>
+      
+      <div class="cart-body">
+        <% if current_user.cart_items.length == 0 %>
+          <div class="cart-item row">
+            nothing in your cart
+          </div>
+        <% else %>
+          <% current_user.cart_items.each do |ci| %>
+          <div class="cart-item row" id="cart-item-<%= ci.id %>">
+            <div class="col-xs-3">
+              <%= link_to image_tag(ci.item.image.url(:cart)), item_url(ci) %>
+            </div>
+            
+            <div class="col-xs-9">
+              <%= link_to ci.item.title, item_url(ci.item) %>
+              <%= ci.item.description %>
+              <form action="<%= cart_item_url(ci) %>"                     
+                method="post" data-id="<%= ci.id %>" class="form-cart-remove">
+                <input type="hidden" name="authenticity_token" 
+                  value="<%= form_authenticity_token %>">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <input type="submit" name="some_name" value="remove" 
+                  id="some_name" class="cart-remove-btn">  
+              </form>
+            </div>
+          </div>
+          <% end %>
+         <% end %>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" 
+          data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">
+          Checkout
+        </button>
+    </div>
+    </div>
+  </div>
+</div>
