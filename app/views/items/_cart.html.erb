@@ -17,7 +17,7 @@
                     <%= link_to image_tag(@item.image.url(:cart)), item_url(@item) %>
                   </div>
                   <div class="col-xs-9">
-                    <%= link_to @item.title, item_url(@item) %>
+                    <div><%= link_to @item.title, item_url(@item) %></div>
                     <%= @item.description %>
                   </div>
                 </div>
@@ -30,7 +30,7 @@
                     <%= link_to image_tag(ci.item.image.url(:cart)), item_url(ci) %>
                   </div>
                   <div class="col-xs-9">
-                    <%= link_to ci.item.title, item_url(ci.item) %>
+                    <div><%= link_to ci.item.title, item_url(ci.item) %></div>
                     <%= ci.item.description %>
                     <form action="<%= cart_item_url(ci) %>"                       method="post" data-id="<%= ci.id %>"           
                       class="form-cart-remove">
@@ -38,7 +38,7 @@
                           value="<%= form_authenticity_token %>">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="submit" name="some_name" value="remove" 
-                          id="some_name" class="cart-remove-btn">  
+                          id="some_name" class="cart-remove-btn btn btn-danger">  
                     </form>
                   </div>
                 </div>
@@ -46,7 +46,7 @@
                 <% end %>
               </div>
               
-              <div class="modal-footer">
+              <div id="cart-modal-footer" class="modal-footer">
                 <button type="button" class="btn btn-default" 
                   data-dismiss="modal" id='cart-close'>
                   Close

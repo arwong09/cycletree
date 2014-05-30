@@ -130,20 +130,27 @@
       </div>
     </div>
     <script>
-      $('#index-user-cart').on('hidden.bs.modal', function(){location.reload();});
-      
-      $('.form-cart-remove').submit(function(event) {
-        event.preventDefault();
-        var valuesToSubmit = $(this).serialize();
-        $.ajax({
-          url: $(this).attr('action'),
-          method: "delete",
-          data: valuesToSubmit,
-          dataType: "JSON"
-        });
-        var id = $(event.target).data('id')
-        $('#cart-item-' + id).remove();
+    $('.form-cart-remove').submit(function(event) {
+      var id = $(event.target).data('id');
+      $('#cart-item-' + id).remove();
+      $('#cart-item-' + id).remove();
+      event.preventDefault();
+      var valuesToSubmit = $(this).serialize();
+      $.ajax({
+        url: $(this).attr('action'),
+        method: "delete",
+        data: valuesToSubmit,
+        dataType: "JSON"
+
       });
+  
+    });
+    
+      $('#index-user-cart').on('hidden.bs.modal', function(){
+        location.reload();
+      });
+      
+      
     </script>
   </body>
 </html>
