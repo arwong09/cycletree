@@ -4,6 +4,7 @@ Cycletree.Router = Backbone.Router.extend({
     'categories/:id/items/:id': 'cartModal',
     'categories/all': 'categoriesAll',
     'categories/:id': 'categoriesShow',
+    'checkout': 'cartShow'
 
     // 'items/:id' : 'itemsShow'
   },
@@ -15,6 +16,10 @@ Cycletree.Router = Backbone.Router.extend({
     //     this._swapView(indexView)
     //   }.bind(this)
     // })
+  },
+  
+  cartShow: function() {
+    var cartItems = new Cycletree.CartItems([], {})
   },
   
   categoriesAll: function () {

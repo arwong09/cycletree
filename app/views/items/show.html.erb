@@ -226,6 +226,23 @@
               </div>
               
               <div class="cart-body">
+                <div class="cart-item row" id="cart-item-<%= @item.id %>">
+                  <div class="col-xs-3">
+                    <%= link_to image_tag(@item.image.url(:cart)), item_url(@item) %>
+                  </div>
+                  <div class="col-xs-9">
+                    <%= link_to @item.title, item_url(@item) %>
+                    <%= @item.description %>
+                    <form action="/items/<%= CartItem.find_by(cart_id: current_user.cart.id, item_id: @item.id).id if CartItem.find_by(cart_id: current_user.cart.id, item_id: @item.id) %>"                       method="post" data-id="<%= @item.id %>"           
+                      class="form-cart-remove">
+                        <input type="hidden" name="authenticity_token" 
+                          value="<%= form_authenticity_token %>">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" name="some_name" value="remove" 
+                          id="some_name" class="cart-remove-btn">  
+                    </form>
+                  </div>
+                </div>
                 
                 <% if current_user %>
                 <% @cart_items.each do |ci| %>
@@ -235,7 +252,7 @@
                     <%= link_to image_tag(ci.item.image.url(:cart)), item_url(ci) %>
                   </div>
                   <div class="col-xs-9">
-                    <%= link_to ci.item.title, item_url(ci) %>
+                    <%= link_to ci.item.title, item_url(ci.item) %>
                     <%= ci.item.description %>
                     <form action="<%= cart_item_url(ci) %>"                       method="post" data-id="<%= ci.id %>"           
                       class="form-cart-remove">
@@ -257,7 +274,7 @@
                   Close
                 </button>
                 <button type="button" class="btn btn-primary">
-                  Checkout
+                  <a href="/bikes/#/checkout">Checkout</a>
                 </button>
               </div>
             </div>
@@ -325,10 +342,6 @@ $(function() {
     var id = $(event.target).data('id')
     $('#cart-item-' + id).remove();
   });
-  
-  $('cart-form').submit(function(event) {
-    
-  })
   
   $('#form-submit-favorite').submit(function(event) {
     event.preventDefault();

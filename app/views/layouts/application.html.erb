@@ -51,6 +51,7 @@
             
             <li class="nav-li" id="nav-li-cart">
               Cart&nbsp; <span class="glyphicon glyphicon-shopping-cart"></span>
+              <span class="badge" id="cart-badge"><%= current_user.cart_items.length %></span>
             </li>
             <li class="nav-li" id="nav-search-li">
               <form action="/bikes/#categories/all" class="navbar-form navbar-left" role="search">

@@ -1,0 +1,1 @@
+Cycletree.CartItem = Backbone.Model.extend({});
