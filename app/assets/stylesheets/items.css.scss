@@ -39,8 +39,28 @@
   margin-bottom: 0;
 }
 
+#form-item-features {
+  width: 99%;
+}
+
+#form-item-condition {
+  width: 25%;
+}
+
+#form-item-image {
+  float: right;
+  width: 33%;
+  margin-right: 20px;
+}
+
+#form-post-bike {
+  margin-top: 20px;
+}
+
 #item_features {
   width: 100%;
+  float: left;
+  display: block;
 }
 
 .item-show-condition a {
