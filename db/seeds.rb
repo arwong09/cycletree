@@ -39,14 +39,9 @@ items = Item.create([{ title: 'Mens Hybrid Bike - 22" - MUST SEE', description: 
 Built with an ALUXX aluminum frame and a wide range of easy to operate
 gearing, Escape is a fun, efficient way to leave your daily stresses behind. Its
 smooth rolling 700c wheels and stable frame geometry make it fast and sporty
-enough for a fitness routine, and comfortable enough to commute or just cruise. Built with an ALUXX aluminum frame and a wide range of easy to operate
-gearing, Escape is a fun, efficient way to leave your daily stresses behind. Its
+enough for a fitness routine, and comfortable enough to commute or just cruise. Built with an ALUXX aluminum frame and a wide range of easy to operate gearing, Escape is a fun, efficient way to leave your daily stresses behind. Its
 smooth rolling 700c wheels and stable frame geometry make it fast and sporty
-enough for a fitness routine, and comfortable enough to commute or just cruise.", price: "400", condition: "Used", features: "Frame Sizes	M
-Colors	Silver
-Frame	ALUXX-grade aluminum
-Fork	Composite-grade composite, alloy steerer Components
-Handlebar Giant Sport, low rise, 31.8mm", owner_id: '3', image: File.new('images/mountain.jpg', 'r')}
+enough for a fitness routine, and comfortable enough to commute or just cruise.", price: "400", condition: "Used", features: "Frame Sizes	M, Colors	Silver, Frame	ALUXX-grade aluminum, Fork	Composite-grade composite, alloy steerer Components, Handlebar Giant Sport, low rise, 31.8mm", owner_id: '3', image: File.new('images/mountain.jpg', 'r')}
 ])
 
 categoryjoins = CategoryJoin.create([{ item_id: 1, category_id: 4}, { item_id: 2, category_id: 1}, { item_id: 3, category_id: 1}, { item_id: 4, category_id: 4}, { item_id: 5, category_id: 2}, { item_id: 6, category_id: 4}, { item_id: 7, category_id: 2}, { item_id: 8, category_id: 1}, { item_id: 9, category_id: 1}, { item_id: 10, category_id: 4}, { item_id: 11, category_id: 2}, { item_id: 12, category_id: 2 }, { item_id: 13, category_id: 4}, { item_id: 14, category_id: 4 }, {item_id: 15, category_id: 3} ])
