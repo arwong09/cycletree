@@ -4,13 +4,13 @@
       <div class="row">
         <div class="poster-outer">
           <div class="poster">
-          <% i = 0 %>
-            <a href="/bikes/#<%= category_path(@categories[i]) %>">
-            <img src='<%= @categories[i].image.url(:index_large) %>' />
+          
+            <a href="/bikes/#<%= category_path(@categories[0]) %>">
+            <img src='<%= @categories[0].image.url(:index_large) %>' />
           </div>
           
           <div class="poster-title poster-title-large">
-            <%= @categories[i].title %>s</a>
+            <%= @categories[0].title %>s</a>
             <span class="spritz"></span>
           </div>
         </div>
@@ -19,12 +19,12 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <% i += 1 %>
-          <a href="/bikes/#<%= category_path(@categories[i]) %>">
-            <img src='<%= @categories[i].image.url(:index_small) %>' />
+          <% i = 0 %>
+          <a href="item_url(@items[i])%>">
+            <img src='<%= @items[i].image.url(:index_small) %>' />
           </div>
           <div class="poster-title">
-            <%= @categories[i].title %>s</a>
+            <%= @items[i].title %>s</a>
             <span class="spritz"></span>
         </div>
       </div>
@@ -32,11 +32,11 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="/bikes/#<%= category_path(@categories[i]) %>">
-          <img src='<%= @categories[i].image.url(:index_small) %>' />
+          <a href="item_url(@item[i]) %>">
+          <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
-            <%= @categories[i].title %>s</a>
+            <%= @items[i].title %>s</a>
             <span class="spritz"></span>
         </div>
       </div>
@@ -46,11 +46,11 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="/bikes/#<%= category_path(@categories[i]) %>">
-          <img src='<%= @categories[i].image.url(:index_small) %>' />
+          <a href="<%= item_url(@items[i]) %>">
+          <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
-            <%= @categories[i].title %>s</a>
+            <%= @items[i].title %>s</a>
             <span class="spritz"></span>
         </div>
       </div>
@@ -58,11 +58,11 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="/bikes/#<%= category_path(@categories[i]) %>">
-          <img src='<%= @categories[i].image.url(:index_small) %>' />
+          <a href="item_url(@item[i]) %>">
+          <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
-            <%= @categories[i].title %>s</a>
+            <%= @items[i].title %>s</a>
             <span class="spritz"></span>
         </div>
       </div>
@@ -74,17 +74,17 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="/bikes/#<%= category_path(@categories[i]) %>">
-          <img src='<%= @categories[i].image.url(:index_small) %>' />
+          <a href="item_url(@item[i]) %>">
+          <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
-            <%= @categories[i].title %>s</a>
+            <%= @items[i].title %>s</a>
             <span class="spritz"></span>
         </div>
       </div>
       <div class="poster-outer">
         <div class="poster">
-          <% i = 0 %>
+          <% i += 1 %>
           <a href="<%= item_url(@items[i]) %>">
           <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
@@ -98,12 +98,11 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <% i += 1 %>
-          <a href="<%= item_url(@items[i]) %>">
-          <img src='<%= @items[i].image.url(:index_large) %>' />
+          <a href="/bikes/#<%= category_path(@categories[1]) %>">
+          <img src='<%= @categories[1].image.url(:index_large) %>' />
         </div>
         <div class="poster-title poster-title-large">
-          <%= @items[i].title %></a>
+          <%= @categories[1].title %></a>
           <span class="spritz"></span>
         </div>
       </div>
@@ -124,7 +123,7 @@
       <div class="poster-outer">
         <div class="poster">
           <% i += 1 %>
-          <a href="/bikes/<%= item_url(@items[i]) %>">
+          <a href="<%= item_url(@items[i]) %>">
           <img src='<%= @items[i].image.url(:index_small) %>' />
         </div>
         <div class="poster-title">
@@ -140,13 +139,12 @@
       <div class="row">
         <div class="poster-outer">
           <div class="poster">
-            <% i += 1 %>
-            <a href="<%= item_url(@items[i]) %>">
-            <img src='<%= @items[i].image.url(:index_large) %>' />
+            <a href="/bikes/#<%= category_path(@categories[2]) %>">
+            <img src='<%= @categories[2].image.url(:index_large) %>' />
           </div>
           
           <div class="poster-title poster-title-large">
-            <%= @items[i].title %></a>
+            <%= @categories[2].title %></a>
             <span class="spritz"></span>
           </div>
         </div>
@@ -208,9 +206,8 @@
     <div class="row">
       <div class="poster-outer">
         <div class="poster">
-          <% i += 1 %>
-          <a href="<%= item_url(@items[i]) %>">
-          <img src='<%= @items[i].image.url(:index_large) %>' />
+          <a href="/bikes/#<%= category_path(@categories[3]) %>">
+          <img src='<%= @categories[3].image.url(:index_large) %>' />
         </div>
         <div class="poster-title poster-title-large">
           <%= @items[i].title %></a>
