@@ -7,7 +7,6 @@ window.Cycletree = {
     Cycletree.Categories = new Cycletree.Categories();
     new Cycletree.Router();
     Backbone.history.start({root: 'categories/:id', pushstate: true});
-    console.log("bb runnig");
   }
 };
 
